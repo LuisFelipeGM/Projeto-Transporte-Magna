@@ -4,7 +4,7 @@ create schema transporte;
 create table if not exists transporte.USUARIO(
 	ID_USUARIO serial primary key,
 	NOME_USUARIO varchar(255) not null CHECK (NOME_USUARIO <> ''),
-	CPF integer not null,
+	CPF varchar(11) not null CHECK (NOME_USUARIO <> ''),
 	DATA_NASCIMENTO date not null,
 	unique(CPF)
 );
@@ -48,6 +48,7 @@ create table if not exists transporte.LINHA(
 create table if not exists transporte.FEEDBACK(
 	ID_FEEDBACK serial primary key,
 	COMENTARIO varchar(500) not null CHECK (COMENTARIO <> ''),
+	NOTA numeric(2,1) not null,
 	DATA_FEEDBACK date not null default now()::date,
 	ID_LINHA integer not null references transporte.LINHA(ID_LINHA) on delete cascade,
 	ID_USUARIO integer not null references transporte.USUARIO(ID_USUARIO) on delete cascade
@@ -77,7 +78,7 @@ create table if not exists transporte.CARTAO_ESTACAO(
 -- CRIANDO TABELA TREM
 create table if not exists transporte.TREM(
 	ID_TREM serial primary key,
-	CODIGO_IDENTIFICACAO varchar(255) not null check (CODIGO_IDENTIFICACAO <> ''),
+	CODIGO_IDENTIFICACAO varchar(10) not null check (CODIGO_IDENTIFICACAO <> ''),
 	CAPACIDADE_PASSAGEIROS integer not null,
 	ESTADO_MANUTENCAO boolean not null default false,
 	ID_LINHA integer not null references transporte.LINHA(ID_LINHA) on delete cascade

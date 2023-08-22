@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="BC464A86-B7A7-479D-B151-6F9F87EBF2E4" containerWithKeyObject="50DD65EF-22E9-1194-C550-33DD845D128B" localFKIndex="CAB381F3-D0EC-4D33-2953-60CC79DA4070" name="T_TPU_ESTACAO_T_TPU_LINHA_FK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>3C2124FC-BCB1-7327-8E76-F96D6826DBB7</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<referredTableLongName>T_TPU_LINHA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>69B80111-98DB-BC4F-6EDF-BDDFFDC7E146</referredTableID>
+<keyObject>C9CDE084-33C8-4B64-8EFE-56937376A9E1</keyObject>
+<referredKeyID>C9CDE084-33C8-4B64-8EFE-56937376A9E1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_LINHA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

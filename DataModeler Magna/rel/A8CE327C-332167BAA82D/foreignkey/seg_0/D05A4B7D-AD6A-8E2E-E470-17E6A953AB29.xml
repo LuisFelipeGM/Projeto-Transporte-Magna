@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D05A4B7D-AD6A-8E2E-E470-17E6A953AB29" containerWithKeyObject="00B05364-F976-C62A-E5A4-DA54D0D7EB60" localFKIndex="6AEBF404-654E-A7BB-F4C0-C265C43613A4" name="T_TPU_MANUTENCAO_T_TPU_TREM_FK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>B893A906-B971-31F1-9C90-2B6C9038DA24</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<referredTableLongName>T_TPU_TREM</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FD2BA835-256D-C25F-4C27-6C92475BBC48</referredTableID>
+<keyObject>0EEB1188-0534-84F2-25F8-EE7DC63E2ED4</keyObject>
+<referredKeyID>0EEB1188-0534-84F2-25F8-EE7DC63E2ED4</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_TREM</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

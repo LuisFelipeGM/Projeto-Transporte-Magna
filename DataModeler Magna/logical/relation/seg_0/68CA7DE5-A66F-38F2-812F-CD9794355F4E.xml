@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_5" directorySegmentName="seg_0" id="68CA7DE5-A66F-38F2-812F-CD9794355F4E">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-21 23:31:04 UTC</createdTime>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<engineerTo>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+</engineerTo>
+<sourcePk>1DFEF684-8410-7A5D-3A3B-9EB9239F2584</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>BF63E49C-097F-4013-284A-5C0D186478BF</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>FEA21542-5DA6-7FE1-E820-AE91E2E57141</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

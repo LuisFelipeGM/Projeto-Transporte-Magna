@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AB1377B2-55BB-8088-5F9F-2BEE3DD295EB" name="T_TPU_FUNCIONARIO">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>BF63E49C-097F-4013-284A-5C0D186478BF</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_FUNCIONARIO" id="7108487D-7A3C-305A-AD89-DA8EFA218E3A">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>CA518472-81AB-9994-57E3-149353B39049</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME_COMPLETO" id="B76D3886-F3C8-EA9F-CE25-601EF320A996">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>FC948EAA-33EC-499B-482F-6D59DE5039EA</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FUNCAO" id="F9338CE9-8BFF-B348-907C-81525DBE9E02">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>8B2228D7-B38A-844F-CD1B-8ACB46CC1272</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INICIO_HORA_TRABALHO" id="B3F0B8F5-A968-3C04-0F29-E0F6CD4F80B5">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>DCE1C90E-F22D-EB78-B61B-928068B102DC</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FIM_HORA_TRABALHO" id="0DE5BEB9-5F67-AC24-993C-B0DC86E5DA7F">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>4FC6FCA2-33C2-AF80-43D6-E67B3C5E91B8</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SALARIO" id="E98BC914-7798-2E2B-8C50-FDC7B2A445D9">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>2F0E7BDE-AEFA-A905-DA29-6538618A2B9E</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,9,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0D854ED9-850F-AD27-A6FF-B7E377756B93" name="T_TPU_FUNCIONARIO_PK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>1DFEF684-8410-7A5D-3A3B-9EB9239F2584</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7108487D-7A3C-305A-AD89-DA8EFA218E3A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

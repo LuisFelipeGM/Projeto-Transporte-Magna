@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="526ABEC3-4EF6-FE20-962E-25A0E2095953" name="T_TPU_CARTAO_ESTACAO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="526ABEC3-4EF6-FE20-962E-25A0E2095953" name="T_TPU_VIAGEM">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 00:58:42 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
@@ -55,14 +55,29 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="ID_PRECO" id="5190979A-8B06-1B2E-FFD8-B0F33EC4F352">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 13:09:34 UTC</createdTime>
+<generatorID>47305C87-A804-7CC1-0936-5B1DAC620DC2</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<engineerTo>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+</engineerTo>
+<referedAttribute>040E2B1C-FEA4-13CF-B2C8-7BA300055BD6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="99641B5D-A35B-63CD-DC15-B784C1640019" name="T_TPU_CARTAO_ESTACAO PK">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 00:59:48 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

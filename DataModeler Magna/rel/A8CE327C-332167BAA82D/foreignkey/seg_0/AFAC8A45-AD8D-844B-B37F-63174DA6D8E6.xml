@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AFAC8A45-AD8D-844B-B37F-63174DA6D8E6" containerWithKeyObject="BD7B89C6-90FD-B15C-C4E8-E1CFBA1D1812" localFKIndex="9E055E01-B592-4013-A39B-BE27D1413257" name="T_TPU_CARTAO_ESTACAO_T_TPU_CARTAO_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AFAC8A45-AD8D-844B-B37F-63174DA6D8E6" containerWithKeyObject="BD7B89C6-90FD-B15C-C4E8-E1CFBA1D1812" localFKIndex="9E055E01-B592-4013-A39B-BE27D1413257" name="T_TPU_VIAGEM_T_TPU_CARTAO_FK">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:05:45 UTC</createdTime>
 <generatorID>BE0FABDA-AADD-B4E4-5502-58A7E2AB8A63</generatorID>

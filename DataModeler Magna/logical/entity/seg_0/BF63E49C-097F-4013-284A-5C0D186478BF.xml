@@ -27,30 +27,17 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NOME_COMPLETO" id="FC948EAA-33EC-499B-482F-6D59DE5039EA">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-21 23:27:10 UTC</createdTime>
+<Attribute name="CODIGO" id="A05C2E76-F5FE-3301-E70E-40783224BF53">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 14:35:15 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="FUNCAO" id="8B2228D7-B38A-844F-CD1B-8ACB46CC1272">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-21 23:27:32 UTC</createdTime>
-<ownerDesignName>DataModeler Magna</ownerDesignName>
-<engineerTo>
-<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>255</dataTypeSize>
-<ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="INICIO_HORA_TRABALHO" id="DCE1C90E-F22D-EB78-B61B-928068B102DC">
 <createdBy>logonrmlocal</createdBy>
@@ -76,19 +63,19 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="SALARIO" id="2F0E7BDE-AEFA-A905-DA29-6538618A2B9E">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-21 23:30:06 UTC</createdTime>
+<Attribute name="ID_USUARIO" id="7A3DF75B-99D3-EB2E-566D-59FAA719847F">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 13:04:53 UTC</createdTime>
+<generatorID>A421B722-9EE1-B3A0-1440-496337B7E403</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
 </engineerTo>
+<referedAttribute>12B0DCBC-9DC9-D8E7-31F6-E1D522D22690</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT021</logicalDatatype>
-<dataTypePrecision>9</dataTypePrecision>
-<dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,9,2</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
@@ -96,8 +83,9 @@
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-21 23:27:09 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

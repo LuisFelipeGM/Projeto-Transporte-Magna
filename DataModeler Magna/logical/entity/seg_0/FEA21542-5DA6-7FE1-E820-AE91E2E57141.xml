@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FEA21542-5DA6-7FE1-E820-AE91E2E57141" name="T_TPU_FUNCIONARIO_TREM">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FEA21542-5DA6-7FE1-E820-AE91E2E57141" name="T_TPU_CONDUCAO">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-21 23:29:19 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
@@ -34,7 +34,6 @@
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
@@ -74,8 +73,9 @@
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-21 23:29:42 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

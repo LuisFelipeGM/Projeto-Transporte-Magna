@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="NUMERO_CARTAO" id="CA654959-55E8-3E0A-7D59-492A91E84DDA">
+<Column name="NUMERO" id="CA654959-55E8-3E0A-7D59-492A91E84DDA">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:05:45 UTC</createdTime>
 <generatorID>3EB150AE-29B6-87CA-7608-505D9604E0E7</generatorID>
@@ -77,7 +77,7 @@
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="ID_USAURIO" id="1B33151C-59C1-201E-8E49-5D34B5575020">
+<Column name="ID_PASSAGEIRO" id="1B33151C-59C1-201E-8E49-5D34B5575020">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:05:45 UTC</createdTime>
 <generatorID>75430D52-B971-E7E7-06E3-F55E49E452BF</generatorID>
@@ -106,7 +106,7 @@
 <colUsage columnID="47E98B9A-C7E1-17A9-9FD4-959139717E17"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="3E515A11-DF5F-50FA-AF01-5455F8B9B1C9" name="T_TPU_CARTAO_T_TPU_USUARIO_FK">
+<ind_PK_UK id="3E515A11-DF5F-50FA-AF01-5455F8B9B1C9" name="T_TPU_CARTAO_T_TPU_PASSAGEIRO_FK">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:05:45 UTC</createdTime>
 <generatorID>DE5CA29F-4155-B318-1E5B-A6BA7B432E28</generatorID>

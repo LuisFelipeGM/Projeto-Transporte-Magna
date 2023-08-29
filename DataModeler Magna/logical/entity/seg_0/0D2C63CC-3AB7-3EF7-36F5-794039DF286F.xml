@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NUMERO_CARTAO" id="3EB150AE-29B6-87CA-7608-505D9604E0E7">
+<Attribute name="NUMERO" id="3EB150AE-29B6-87CA-7608-505D9604E0E7">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:03:00 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
@@ -90,7 +90,7 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_USAURIO" id="75430D52-B971-E7E7-06E3-F55E49E452BF">
+<Attribute name="ID_PASSAGEIRO" id="75430D52-B971-E7E7-06E3-F55E49E452BF">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:04:36 UTC</createdTime>
 <generatorID>DE5CA29F-4155-B318-1E5B-A6BA7B432E28</generatorID>
@@ -110,8 +110,9 @@
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:02:59 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

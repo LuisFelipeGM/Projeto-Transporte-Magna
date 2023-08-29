@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BD7B89C6-90FD-B15C-C4E8-E1CFBA1D1812" name="T_TPU_CARTAO_ESTACAO">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BD7B89C6-90FD-B15C-C4E8-E1CFBA1D1812" name="T_TPU_VIAGEM">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:05:45 UTC</createdTime>
 <generatorID>526ABEC3-4EF6-FE20-962E-25A0E2095953</generatorID>
@@ -49,6 +49,21 @@
 <colAssociation fkAssociation="BC89F58E-B171-F8D5-028C-FF6F30721342" referredColumn="D226D32E-9B0A-2E10-D6EB-58B011767055"/>
 </associations>
 </Column>
+<Column name="ID_PRECO" id="D17472CD-150A-1D8D-826A-A8EB49232D4A">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 13:12:15 UTC</createdTime>
+<generatorID>5190979A-8B06-1B2E-FFD8-B0F33EC4F352</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2BA10A56-2D63-687B-E952-44F6F41D179E" referredColumn="792289CA-65A3-FDC9-0969-3AFB8380C978"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="36AAED63-5B53-36F9-DA48-A6058AB91C24" name="T_TPU_CARTAO_ESTACAO_PK">
@@ -63,7 +78,7 @@
 <colUsage columnID="9595DB2D-F1B1-93A1-04CB-0C8149D534E9"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="9E055E01-B592-4013-A39B-BE27D1413257" name="T_TPU_CARTAO_ESTACAO_T_TPU_CARTAO_FK">
+<ind_PK_UK id="9E055E01-B592-4013-A39B-BE27D1413257" name="T_TPU_VIAGEM_T_TPU_CARTAO_FK">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:05:45 UTC</createdTime>
 <generatorID>BE0FABDA-AADD-B4E4-5502-58A7E2AB8A63</generatorID>
@@ -74,7 +89,7 @@
 <colUsage columnID="0329ACAA-6FDA-BC98-9888-F7A0E311E1CE"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="7D93AA81-7B22-6B02-98F2-534AE0882DFD" name="T_TPU_CARTAO_ESTACAO_T_TPU_ESTACAO_FK">
+<ind_PK_UK id="7D93AA81-7B22-6B02-98F2-534AE0882DFD" name="T_TPU_VIAGEM_T_TPU_ESTACAO_FK">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:05:45 UTC</createdTime>
 <generatorID>BE83688E-AC22-1E07-C9D7-87F95CB7C895</generatorID>
@@ -83,6 +98,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="7527F6A7-804F-17F4-E19C-CC445E59C58B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5E27332A-3258-5410-41DC-4883B8AA52D9" name="T_TPU_VIAGEM_T_TPU_PRECO_FK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 13:12:15 UTC</createdTime>
+<generatorID>47305C87-A804-7CC1-0936-5B1DAC620DC2</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D17472CD-150A-1D8D-826A-A8EB49232D4A"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BBA8DEB9-5778-CFC4-9814-04731FD18982" name="T_TPU_PRECO">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 13:12:15 UTC</createdTime>
+<generatorID>4A2B0F78-BA89-1572-BEFF-BF5044E1FB32</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_PRECO" id="792289CA-65A3-FDC9-0969-3AFB8380C978">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 13:12:15 UTC</createdTime>
+<generatorID>040E2B1C-FEA4-13CF-B2C8-7BA300055BD6</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRECO" id="32B83BE6-F5EF-46CF-935E-DA6112D50E0D">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 13:12:15 UTC</createdTime>
+<generatorID>3B205AEC-429F-0597-36D1-9E1DE83991C9</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="42910396-70C8-1D82-CC56-7A0D9D8B1050" name="T_TPU_PRECO_PK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 13:12:15 UTC</createdTime>
+<generatorID>1D2123C9-24B7-75B7-5F30-E0A7ACEE4D5A</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="792289CA-65A3-FDC9-0969-3AFB8380C978"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

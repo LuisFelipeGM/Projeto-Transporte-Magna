@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_19" directorySegmentName="seg_0" id="A421B722-9EE1-B3A0-1440-496337B7E403">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 13:04:53 UTC</createdTime>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<engineerTo>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+</engineerTo>
+<sourcePk>00D863EB-E8FF-D1DD-DF9D-610838E9BC63</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1123DAA4-F8A6-BD1E-EB2A-D05CF97EF044</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>BF63E49C-097F-4013-284A-5C0D186478BF</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

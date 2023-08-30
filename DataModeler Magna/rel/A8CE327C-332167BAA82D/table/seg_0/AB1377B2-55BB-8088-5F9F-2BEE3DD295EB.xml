@@ -30,6 +30,30 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="FUNCAO" id="E8902B3B-F403-165E-8F45-582E03A71464">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 13:27:23 UTC</createdTime>
+<generatorID>FAD7E635-CE54-3B62-A392-0CE30041D6D9</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SALARIO" id="40E2D2B7-4555-F433-36A8-0C27EB53A51E">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 13:27:23 UTC</createdTime>
+<generatorID>9C2732A0-3CC6-E0B7-F823-23C7E58F4A64</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="INICIO_HORA_TRABALHO" id="B3F0B8F5-A968-3C04-0F29-E0F6CD4F80B5">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:05:45 UTC</createdTime>
@@ -52,6 +76,18 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="ID_CARGO" id="0634AC4E-B391-C892-88CB-055FF2C25A6F">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 14:36:17 UTC</createdTime>
+<generatorID>9F3F8074-562D-475B-BDF1-EEE7870A3EDE</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="ID_USUARIO" id="05423549-815F-F6A8-DA27-FB6B6F46E9D0">
 <createdBy>lipeg</createdBy>
 <createdTime>2023-08-28 13:12:15 UTC</createdTime>
@@ -65,21 +101,6 @@
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="9221EEB7-0F22-89B1-A666-1D3959E3F298" referredColumn="68055EDB-D956-46B7-6134-9139C8A4C1C7"/>
-</associations>
-</Column>
-<Column name="ID_CARGO" id="0634AC4E-B391-C892-88CB-055FF2C25A6F">
-<createdBy>lipeg</createdBy>
-<createdTime>2023-08-28 14:36:17 UTC</createdTime>
-<generatorID>9F3F8074-562D-475B-BDF1-EEE7870A3EDE</generatorID>
-<ownerDesignName>DataModeler Magna</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="1DFE239D-4688-AE20-6A8F-51C456EA6423" referredColumn="927BE155-93E8-7886-EA43-F811710A748E"/>
 </associations>
 </Column>
 </columns>
@@ -116,17 +137,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="05423549-815F-F6A8-DA27-FB6B6F46E9D0"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="91759A81-2FDF-3A21-94F1-1CFA440B36D3" name="T_TPU_FUNCIONARIO_T_TPU_CARGO_FK">
-<createdBy>lipeg</createdBy>
-<createdTime>2023-08-28 14:36:17 UTC</createdTime>
-<generatorID>3CA7F118-E18D-4254-A148-C5C6964EA5ED</generatorID>
-<ownerDesignName>DataModeler Magna</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="0634AC4E-B391-C892-88CB-055FF2C25A6F"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

@@ -39,6 +39,32 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="FUNCAO" id="FAD7E635-CE54-3B62-A392-0CE30041D6D9">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 12:33:42 UTC</createdTime>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<engineerTo>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="SALARIO" id="9C2732A0-3CC6-E0B7-F823-23C7E58F4A64">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 12:33:59 UTC</createdTime>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<engineerTo>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+</Attribute>
 <Attribute name="INICIO_HORA_TRABALHO" id="DCE1C90E-F22D-EB78-B61B-928068B102DC">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-21 23:28:07 UTC</createdTime>

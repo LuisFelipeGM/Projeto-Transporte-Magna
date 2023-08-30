@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="6BC7049E-74E3-B620-68B5-AE7BDE87CD0D" containerWithKeyObject="A2339FE1-DA0B-9301-4277-7B49F7099B84" localFKIndex="DAACDB55-280A-1A62-3787-612ADE875B13" name="T_TPU_TIPO_PASSAGEM_T_TPU_COMPRA_CAIXA_FK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 13:27:23 UTC</createdTime>
+<generatorID>4C90CCEA-0ED5-0F12-63C3-2A4B43BAE9DE</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<referredTableLongName>T_TPU_COMPRA_CAIXA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6782ACC7-BA99-BE08-281E-8368FA6BA42C</referredTableID>
+<keyObject>A22B8723-5215-3D2F-7756-09B1824AC3CF</keyObject>
+<referredKeyID>A22B8723-5215-3D2F-7756-09B1824AC3CF</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_BILHETE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

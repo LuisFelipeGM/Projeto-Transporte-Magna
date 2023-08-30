@@ -27,6 +27,20 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="PRECO" id="FD9AAC07-E670-9320-19AF-34C813668558">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 13:15:46 UTC</createdTime>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<engineerTo>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
 <Attribute name="ID_ESTACAO" id="1A1AE3BE-B202-AC9A-42C9-8A15ABCEFDD4">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:04:53 UTC</createdTime>
@@ -41,15 +55,15 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_PRECO" id="5190979A-8B06-1B2E-FFD8-B0F33EC4F352">
+<Attribute name="ID_TIPO_PASSAGEM" id="40B93EC8-DA73-02AD-1851-FA192C6AD0BB">
 <createdBy>lipeg</createdBy>
-<createdTime>2023-08-28 13:09:34 UTC</createdTime>
-<generatorID>47305C87-A804-7CC1-0936-5B1DAC620DC2</generatorID>
+<createdTime>2023-08-30 12:31:59 UTC</createdTime>
+<generatorID>7DC516FB-B313-9CD0-F5BC-B5626BB0C36D</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
 </engineerTo>
-<referedAttribute>040E2B1C-FEA4-13CF-B2C8-7BA300055BD6</referedAttribute>
+<referedAttribute>C99075DC-12D7-1A33-A9D5-617D9B37F4AD</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>

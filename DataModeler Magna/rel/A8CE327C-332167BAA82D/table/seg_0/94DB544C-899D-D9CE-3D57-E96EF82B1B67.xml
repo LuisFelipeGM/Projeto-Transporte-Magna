@@ -74,7 +74,7 @@
 <colUsage columnID="DBD702D7-EEED-1764-D1B4-86BBEC0B0DD4"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="1CE99B53-372D-9BA2-EFAB-003A02A81868" name="T_TPU_CONDUZIR_T_TPU_FUNCIONARIO_FK">
+<ind_PK_UK id="1CE99B53-372D-9BA2-EFAB-003A02A81868" name="T_TPU_CONDUCAO_T_TPU_FUNCIONARIO_FK">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:05:45 UTC</createdTime>
 <generatorID>68CA7DE5-A66F-38F2-812F-CD9794355F4E</generatorID>
@@ -85,7 +85,7 @@
 <colUsage columnID="325E5624-3388-79A2-92A3-7DF0991705B0"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="543E4E58-9DAB-029C-23F1-3601148DFBE7" name="T_TPU_CONDUZIR_T_TPU_TREM_FK">
+<ind_PK_UK id="543E4E58-9DAB-029C-23F1-3601148DFBE7" name="T_TPU_CONDUCAO_T_TPU_TREM_FK">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:05:45 UTC</createdTime>
 <generatorID>56A4943C-F15D-45F3-4A6D-88F93AB3E6F0</generatorID>

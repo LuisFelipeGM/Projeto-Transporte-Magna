@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AFAC8A45-AD8D-844B-B37F-63174DA6D8E6" containerWithKeyObject="BD7B89C6-90FD-B15C-C4E8-E1CFBA1D1812" localFKIndex="9E055E01-B592-4013-A39B-BE27D1413257" name="T_TPU_CARTAO_ESTACAO_T_TPU_CARTAO_FK">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-22 01:05:45 UTC</createdTime>
-<generatorID>BE0FABDA-AADD-B4E4-5502-58A7E2AB8A63</generatorID>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="BB1C3754-E40C-CAD0-844C-BF2063A0BC30" containerWithKeyObject="A2339FE1-DA0B-9301-4277-7B49F7099B84" localFKIndex="821A2DCE-04F7-E6AF-3C49-CF0861FA3373" name="T_TPU_TIPO_PASSAGEM_T_TPU_CARTAO_FK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 13:27:23 UTC</createdTime>
+<generatorID>9EB4F504-5E4C-D0CC-B645-2BC5B0D546F8</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <referredTableLongName>T_TPU_CARTAO</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

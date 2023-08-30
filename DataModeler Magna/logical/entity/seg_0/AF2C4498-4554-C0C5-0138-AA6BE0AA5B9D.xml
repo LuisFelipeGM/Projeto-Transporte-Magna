@@ -85,8 +85,9 @@
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-21 22:49:30 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

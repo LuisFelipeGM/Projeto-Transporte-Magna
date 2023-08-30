@@ -27,7 +27,19 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NUMERO_LINHA" id="5A737700-8978-CE80-6D48-BE11BE1771ED">
+<Attribute name="NOME" id="39DB2AEB-6590-F50D-0208-CFB7F7DAF353">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 13:00:06 UTC</createdTime>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<engineerTo>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NUMERO" id="5A737700-8978-CE80-6D48-BE11BE1771ED">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-21 22:41:05 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
@@ -39,7 +51,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="CONEXAO_LINHA" id="6816E9B2-CBBD-1A34-2DA5-4B421B100062">
+<Attribute name="CONEXAO" id="6816E9B2-CBBD-1A34-2DA5-4B421B100062">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-21 22:43:42 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
@@ -58,8 +70,9 @@
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-21 22:41:15 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

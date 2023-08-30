@@ -19,7 +19,18 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="NUMERO_LINHA" id="D478C252-612E-1D4D-5ED7-0126DB370C20">
+<Column name="NOME" id="0170411C-9B0F-8FC2-1A56-1459123A6601">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 13:12:15 UTC</createdTime>
+<generatorID>39DB2AEB-6590-F50D-0208-CFB7F7DAF353</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NUMERO" id="D478C252-612E-1D4D-5ED7-0126DB370C20">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:05:45 UTC</createdTime>
 <generatorID>5A737700-8978-CE80-6D48-BE11BE1771ED</generatorID>
@@ -30,7 +41,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CONEXAO_LINHA" id="A980BBA1-82EF-12BF-771E-27733796BBDD">
+<Column name="CONEXAO" id="A980BBA1-82EF-12BF-771E-27733796BBDD">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:05:45 UTC</createdTime>
 <generatorID>6816E9B2-CBBD-1A34-2DA5-4B421B100062</generatorID>

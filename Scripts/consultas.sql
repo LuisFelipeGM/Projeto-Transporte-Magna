@@ -1,48 +1,27 @@
 
--- Relatório sobre os Feedbacks das Linhas feitas por Usuarios
-
-select u.nome_usuario "Nome Usuario", f.nota "Nota", f.comentario "Comentario", l.numero_linha "Numero Linha", l.nome_linha "Linha" 
-	from transporte.usuario u
-	inner join transporte.feedback f on u.id_usuario = f.id_usuario
-	inner join transporte.linha l on f.id_linha = l.id_linha ;
-
------------------------------------------------------------------------------
-
 -- Funcionarios que Trabalharam em determinado Trem
 
-select fun.nome_completo "Nome Completo", fun.funcao "Função", t.codigo_identificacao "Código Trem", ft.data_utilizado "Data Utilizado"
-	from transporte.funcionario fun
-	inner join transporte.funcionario_trem ft on ft.id_funcionario = fun.id_funcionario
-	inner join transporte.trem t on t.id_trem = ft.id_trem; 
-
------------------------------------------------------------------------------
-
--- Funcionarios que estão fazendo Manutenção nos Trem
-
-select fun.nome_completo "Nome Completo", fun.funcao "Função", t.codigo_identificacao "Código Trem", 
-	m.data_inicio "Inicio Manutenção", m.data_fim "Fim Manutenção"
-	from transporte.funcionario fun
-	inner join transporte.manutencao m on m.id_funcionario = fun.id_funcionario
-	inner join transporte.trem t on t.id_trem = m.id_trem; 
-	
+select u.nome_usuario "Nome Completo", fun.funcao "Função", t.codigo_identificacao "Código Trem", con.data_utilizado "Data Utilizado"
+	from transporte.t_tpu_funcionario fun
+	inner join transporte.t_tpu_usuario u on u.id_usuario = fun.id_usuario
+	inner join transporte.t_tpu_conducao con on con.id_funcionario = fun.id_funcionario
+	inner join transporte.t_tpu_trem t on t.id_trem = con.id_trem; 
 
 -----------------------------------------------------------------------------
 
 -- Quantidade de Trem em Atividade e Quantidade de Trens em Manutenção
 
 
-select count(m.id_manutencao) "Quantidade de Trens em Manutenção" from transporte.manutencao m;
-
-select count(ft.id_funcionario_trem) "Quantidade de Trens em Atividade" from transporte.funcionario_trem ft;
+select count(con.id_conducao) "Quantidade de Trens em Atividade" from transporte.t_tpu_conducao con;
 
 
 -----------------------------------------------------------------------------
 
 -- Quantidade de Pessoas usando o cartão por Estação
 
-select e.nome_estacao, count(ce.id_cartao_estacao) "Pessoas por Estação usando o cartão" 
-	from transporte.estacao e
-	inner join transporte.cartao_estacao ce on ce.id_estacao = e.id_estacao
+select e.nome, count(v.id_viagem) "Pessoas por Estação usando o cartão" 
+	from transporte.t_tpu_estacao e
+	inner join transporte.t_tpu_viagem v on v.id_estacao = e.id_estacao
 group by 1
 order by "Pessoas por Estação usando o cartão" desc ;
 
@@ -51,30 +30,31 @@ order by "Pessoas por Estação usando o cartão" desc ;
 
 -- Quantidade de Estações por Linha
 
-select l.nome_linha "Linha", count(e.id_linha) "Quantidade de Estações" 
-	from transporte.linha l
-	inner join transporte.estacao e on l.id_linha = e.id_linha
+select l.nome "Linha", count(e.id_linha) "Quantidade de Estações" 
+	from transporte.t_tpu_linha l
+	inner join transporte.t_tpu_estacao e on l.id_linha = e.id_linha
 group by 1
 order by "Quantidade de Estações" desc;
 
 
 -----------------------------------------------------------------------------
 
--- Usuarios com saldo entre 
+-- Usuarios com saldo entre R$150 e R$320
 
-select u.nome_usuario, c.numero_cartao, c.saldo 
-	from transporte.usuario u
-	inner join transporte.cartao c on c.id_usuario = u.id_usuario 
-where c.saldo between 150.0 and 320.0;
+select u.nome_usuario, c.numero, c.saldo 
+	from transporte.t_tpu_usuario u
+	inner join transporte.t_tpu_passageiro p on u.id_usuario = p.id_usuario
+	inner join transporte.t_tpu_cartao c on c.id_passageiro = p.id_passageiro
+	where c.saldo between 150.0 and 320.0;
 
 
 -----------------------------------------------------------------------------
 
 -- Quantidade de Trens por linha
 
-select l.nome_linha "Linha", count(t.id_trem) "Quantidade de Trens"
-	from transporte.trem t 
-	inner join transporte.linha l on l.id_linha = t.id_linha
+select l.nome "Linha", count(t.id_trem) "Quantidade de Trens"
+	from transporte.t_tpu_trem t 
+	inner join transporte.t_tpu_linha l on l.id_linha = t.id_linha
 group by 1
 order by "Quantidade de Trens" desc;
 

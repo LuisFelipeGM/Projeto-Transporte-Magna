@@ -76,18 +76,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="ID_CARGO" id="0634AC4E-B391-C892-88CB-055FF2C25A6F">
-<createdBy>lipeg</createdBy>
-<createdTime>2023-08-28 14:36:17 UTC</createdTime>
-<generatorID>9F3F8074-562D-475B-BDF1-EEE7870A3EDE</generatorID>
-<ownerDesignName>DataModeler Magna</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="ID_USUARIO" id="05423549-815F-F6A8-DA27-FB6B6F46E9D0">
 <createdBy>lipeg</createdBy>
 <createdTime>2023-08-28 13:12:15 UTC</createdTime>

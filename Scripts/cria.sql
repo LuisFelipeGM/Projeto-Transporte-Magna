@@ -20,7 +20,7 @@ create table if not exists transporte.T_TPU_FUNCIONARIO(
 -- CRIANDO TABELA PASSAGEIRO
 create table if not exists transporte.T_TPU_PASSAGEIRO(
 	ID_PASSAGEIRO serial primary key,
-	CPF integer not null,
+	CPF numeric(11) not null,
 	DATA_NASCIMENTO date not null,
 	ID_USUARIO integer not null references transporte.T_TPU_USUARIO(ID_USUARIO) on delete cascade,
 	unique(CPF)

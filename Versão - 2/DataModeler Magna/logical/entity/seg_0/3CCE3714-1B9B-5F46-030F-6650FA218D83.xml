@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3CCE3714-1B9B-5F46-030F-6650FA218D83" name="T_TPU_TIPO_PASSAGEM">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-30 00:14:20 UTC</createdTime>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<engineerTo>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_TIPO_PASSAGEM" id="C99075DC-12D7-1A33-A9D5-617D9B37F4AD">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 12:31:44 UTC</createdTime>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<engineerTo>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_CARTAO" id="0B044372-BEFD-0AF5-69DA-F42A24AB3C9D">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-30 00:14:39 UTC</createdTime>
+<generatorID>9EB4F504-5E4C-D0CC-B645-2BC5B0D546F8</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<engineerTo>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+</engineerTo>
+<referedAttribute>E6DE7EC9-A5DC-43DB-D63C-902A8DD6C10D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_BILHETE" id="8A8B87EE-9748-1C6F-68EE-68A864BB5929">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 12:31:04 UTC</createdTime>
+<generatorID>4C90CCEA-0ED5-0F12-63C3-2A4B43BAE9DE</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<engineerTo>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+</engineerTo>
+<referedAttribute>0170DD84-8B9A-A1B6-9573-3F87A07C7E32</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F32C2BAD-52D0-C2B6-83EE-A1642350DE86" name="T_TPU_TIPO_COMPRA PK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 12:31:58 UTC</createdTime>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<engineerTo>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C99075DC-12D7-1A33-A9D5-617D9B37F4AD</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

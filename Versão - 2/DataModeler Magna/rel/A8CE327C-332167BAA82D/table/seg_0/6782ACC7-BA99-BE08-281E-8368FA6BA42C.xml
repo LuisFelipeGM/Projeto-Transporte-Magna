@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6782ACC7-BA99-BE08-281E-8368FA6BA42C" name="T_TPU_COMPRA_BILHETE">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 13:27:23 UTC</createdTime>
+<generatorID>287B4A82-2E11-88A3-D4F5-E7354DBFBCA0</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<ordsAlias>t_tpu_compra_caixa</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_BILHETE" id="EF43FFD4-EA40-E314-86C9-003229ED2248">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 13:27:23 UTC</createdTime>
+<generatorID>0170DD84-8B9A-A1B6-9573-3F87A07C7E32</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CODIGO" id="C2BAFF5C-0D16-04CD-56BF-C3670DB1D7F0">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 13:27:23 UTC</createdTime>
+<generatorID>BA085287-4D4A-F682-A90A-6B4E147A9690</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATA_GERACAO" id="753F01AA-6810-277B-021C-026A2B5DFDC0">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 13:27:23 UTC</createdTime>
+<generatorID>74B52EC3-EFA8-97CD-1A62-9A8EAF3632AA</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UTILIZADO" id="63EB785E-C68D-709F-8A37-D60B7F0A58B4">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 13:27:23 UTC</createdTime>
+<generatorID>7D332B66-B82E-07DB-DCF5-C14CC4528BBD</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A22B8723-5215-3D2F-7756-09B1824AC3CF" name="T_TPU_COMPRA_CAIXA_PK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-30 13:27:23 UTC</createdTime>
+<generatorID>5A6D5922-1935-CF48-81F0-CA01CFE10A46</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF43FFD4-EA40-E314-86C9-003229ED2248"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

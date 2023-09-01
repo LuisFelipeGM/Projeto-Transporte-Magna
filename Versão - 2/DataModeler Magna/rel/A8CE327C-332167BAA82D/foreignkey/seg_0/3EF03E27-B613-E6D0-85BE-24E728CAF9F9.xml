@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3EF03E27-B613-E6D0-85BE-24E728CAF9F9" containerWithKeyObject="50DD65EF-22E9-1194-C550-33DD845D128B" localFKIndex="EAC9D73A-FA63-FBD2-792C-B40FB8C31B01" name="T_TPU_ESTACAO_T_TPU_CIDADE_FK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>570D5D18-0372-509B-CEDE-4DC1E3FF3494</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<referredTableLongName>T_TPU_CIDADE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DD76F505-30B1-036E-4B4F-8BE27189BB1E</referredTableID>
+<keyObject>6AEB235B-2D9C-B064-7C2B-C86FC87DF964</keyObject>
+<referredKeyID>6AEB235B-2D9C-B064-7C2B-C86FC87DF964</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_CIDADE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

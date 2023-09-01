@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="1F394CB3-01DE-88EE-3D72-9D3B6826E69A" mainViewID="11BD41CA-5181-AB04-15FC-CE0E15C51365">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-21 22:27:05 UTC</createdTime>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

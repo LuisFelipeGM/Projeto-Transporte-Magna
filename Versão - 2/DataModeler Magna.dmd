@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="DataModeler Magna" id="70F8FA36-D1EC-C60D-784D-A0D006EC86E8" version="3.5">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-21 22:27:05 UTC</createdTime>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>70F8FA36-D1EC-C60D-784D-A0D006EC86E8</designId>
+</OSDM_Design>

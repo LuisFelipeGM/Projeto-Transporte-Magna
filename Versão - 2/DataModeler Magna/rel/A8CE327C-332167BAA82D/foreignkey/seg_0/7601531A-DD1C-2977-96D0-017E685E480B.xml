@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7601531A-DD1C-2977-96D0-017E685E480B" containerWithKeyObject="94DB544C-899D-D9CE-3D57-E96EF82B1B67" localFKIndex="1CE99B53-372D-9BA2-EFAB-003A02A81868" name="T_TPU_CONDUCAO_T_TPU_FUNCIONARIO_FK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>68CA7DE5-A66F-38F2-812F-CD9794355F4E</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<referredTableLongName>T_TPU_FUNCIONARIO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>AB1377B2-55BB-8088-5F9F-2BEE3DD295EB</referredTableID>
+<keyObject>0D854ED9-850F-AD27-A6FF-B7E377756B93</keyObject>
+<referredKeyID>0D854ED9-850F-AD27-A6FF-B7E377756B93</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_FUNCIONARIO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

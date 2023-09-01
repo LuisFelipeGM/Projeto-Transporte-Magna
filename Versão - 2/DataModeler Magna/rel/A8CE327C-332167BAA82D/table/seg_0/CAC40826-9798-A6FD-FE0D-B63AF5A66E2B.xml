@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CAC40826-9798-A6FD-FE0D-B63AF5A66E2B" name="T_TPU_PASSAGEIRO">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>00F27070-B4B8-A149-C7E5-B598D6D597AF</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_PASSAGEIRO" id="21F720AB-0ABE-ADBF-B2EB-D3E28813C736">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>ECCB19FA-7A7B-7B9B-20A0-E667C11074CC</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CPF" id="19289657-BA5A-B983-C455-CDA02BC39B7F">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>6DC7B61F-3927-D589-BD0F-CCD4E6CE2696</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATA_NASCIMENTO" id="706BDD74-C6B4-511C-CE17-686A9A88F165">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>2B118086-50F9-63EC-EC85-3CD3172C394A</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_USUARIO" id="2DE99920-CD32-F8EC-8A6C-B7EE4B64B7F9">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 13:12:15 UTC</createdTime>
+<generatorID>085DB0D8-9E91-2198-90CB-01D0582896B5</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="22614454-D064-1B54-E198-0FAF52B2DA1E" referredColumn="68055EDB-D956-46B7-6134-9139C8A4C1C7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C280C1E6-45F9-A55D-2826-D12756EE7260" name="T_TPU_USUARIO_PK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<generatorID>1FC75A15-D438-C78A-2BAF-E3CB44940798</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21F720AB-0ABE-ADBF-B2EB-D3E28813C736"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F888231D-A4E0-3D72-DD4D-4C676D743FAE" name="T_TPU_PASSAGEIRO__IDX">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 13:12:15 UTC</createdTime>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>B44CA6E8-E514-A5E7-6ECC-334BB5ED0449</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="2DE99920-CD32-F8EC-8A6C-B7EE4B64B7F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EA703DAE-10F5-DF57-6E33-695BF15141A6" name="T_TPU_PASSAGEIRO_T_TPU_USUARIO_FK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-08-28 13:12:15 UTC</createdTime>
+<generatorID>B44CA6E8-E514-A5E7-6ECC-334BB5ED0449</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2DE99920-CD32-F8EC-8A6C-B7EE4B64B7F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

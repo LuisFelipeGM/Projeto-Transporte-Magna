@@ -51,7 +51,7 @@ create table if not exists transporte.T_TPU_COMPRA_BILHETE(
 -- CRIANDO TABELA TIPO_PASSAGEM
 create table if not exists transporte.T_TPU_TIPO_PASSAGEM(
 	ID_TIPO_PASSAGEM serial primary key,
-	ID_CARTAO integer references transporte.T_TPU_PASSAGEIRO(ID_PASSAGEIRO) on delete cascade,
+	ID_CARTAO integer references transporte.T_TPU_CARTAO(ID_CARTAO) on delete cascade,
 	ID_BILHETE integer references transporte.T_TPU_COMPRA_BILHETE(ID_BILHETE) on delete cascade
 	CONSTRAINT UM_TIPO CHECK (
         (ID_BILHETE IS NOT NULL AND ID_CARTAO IS NULL) OR

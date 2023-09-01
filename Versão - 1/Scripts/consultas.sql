@@ -9,7 +9,7 @@ select u.nome_usuario "Nome Completo", fun.funcao "Função", t.codigo_identific
 
 -----------------------------------------------------------------------------
 
--- Quantidade de Trem em Atividade e Quantidade de Trens em Manutenção
+-- Quantidade de Trem em Atividade e Quantidade de Trens em Atividade
 
 
 select count(con.id_conducao) "Quantidade de Trens em Atividade" from transporte.t_tpu_conducao con;

@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5856A76D-1FA9-BE52-17C1-B873886DE3A2" name="T_TPU_CIDADE">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-21 22:32:16 UTC</createdTime>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="44437CB7-7B78-0972-3CFA-163623C2CE2B" name="TB_CIDADE">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 15:49:20 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_CIDADE" id="C75474CE-3314-4685-3109-D774F2D40206">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-21 22:32:59 UTC</createdTime>
+<Attribute name="ID_CIDADE" id="57A5957B-87CD-BBE6-7314-4B03D3031F32">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 15:49:44 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
@@ -27,9 +27,9 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NOME_CIDADE" id="51CBC189-6EAD-53A3-A8CE-F4E8FDDDED74">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-21 22:33:18 UTC</createdTime>
+<Attribute name="NOME" id="C6AC6B4A-D531-9481-6A24-03010EE59038">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 15:50:19 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
@@ -37,47 +37,35 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>255</dataTypeSize>
-<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NUMERO_POPULACIONAL" id="DDB44F1E-430B-C02F-AED2-AF320A1F5EB8">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-21 22:33:50 UTC</createdTime>
+<Attribute name="ID_ESTADO" id="B0D47C44-BA04-EFD5-B2C0-4CF498FD5D4C">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 16:20:58 UTC</createdTime>
+<generatorID>D9930D24-A432-449C-FA14-9CA29338FFF7</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
 </engineerTo>
+<referedAttribute>190CFC08-F316-D775-C61F-168AF6CAC086</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="ZONA_SP" id="188F914F-CA6C-45EE-3E23-BA93C27127B5">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-21 22:34:34 UTC</createdTime>
-<ownerDesignName>DataModeler Magna</ownerDesignName>
-<engineerTo>
-<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>255</dataTypeSize>
-<ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="0152026A-8D61-AC60-F1D3-D49355A662C9" name="T_TPU_CIDADE PK">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-21 22:33:13 UTC</createdTime>
+<identifier id="A608B427-567C-5E5A-1B63-527C5CD90D7B" name="TB_CIDADE PK">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 15:51:13 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="false"/>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>C75474CE-3314-4685-3109-D774F2D40206</attributeRef>
+<attributeRef>57A5957B-87CD-BBE6-7314-4B03D3031F32</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C54823CA-7DAB-2F9D-07E1-F9F2817BE329" name="TB_LINHA">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-21 22:40:28 UTC</createdTime>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="20FF8E3D-1A26-B91C-D857-E955110DDE53" name="TB_CONEXAO">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 15:41:31 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_LINHA" id="E7A001FD-9C95-56D1-906C-A2B521CEB8E1">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-21 22:41:00 UTC</createdTime>
+<Attribute name="ID_CONEXAO" id="E0C156F3-A74F-0C84-9333-69062526B645">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 15:41:46 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
@@ -27,25 +27,29 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NOME" id="39DB2AEB-6590-F50D-0208-CFB7F7DAF353">
-<createdBy>lipeg</createdBy>
-<createdTime>2023-08-28 13:00:06 UTC</createdTime>
+<Attribute name="ID_LINHA" id="91F58D91-28F1-FE49-1A51-5C88CC5E6B42">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 15:42:33 UTC</createdTime>
+<generatorID>B02B55F4-0D1E-F7C0-0A6D-A7848538934D</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
 </engineerTo>
+<referedAttribute>E7A001FD-9C95-56D1-906C-A2B521CEB8E1</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NUMERO" id="5A737700-8978-CE80-6D48-BE11BE1771ED">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-21 22:41:05 UTC</createdTime>
+<Attribute name="ID_ESTACAO" id="153A04B0-19B7-6617-0BAA-130F3AD59386">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 15:42:44 UTC</createdTime>
+<generatorID>1B734AD9-A81C-20BD-427C-23D2FF09C820</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
 </engineerTo>
+<referedAttribute>EBD05E9E-A388-F12F-9B88-7CE09D781EBD</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -53,17 +57,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="4F2D9365-F66E-B93F-815A-F46522C80EC7" name="T_TPU_LINHA PK">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-21 22:41:15 UTC</createdTime>
+<identifier id="8BF94DE3-BEC1-ADEE-46BD-0A45C430E76E" name="TB_CONEXAO PK">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 15:42:23 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="false"/>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>E7A001FD-9C95-56D1-906C-A2B521CEB8E1</attributeRef>
+<attributeRef>E0C156F3-A74F-0C84-9333-69062526B645</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

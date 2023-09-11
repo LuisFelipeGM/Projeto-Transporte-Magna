@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="00F27070-B4B8-A149-C7E5-B598D6D597AF" name="T_TPU_PASSAGEIRO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="00F27070-B4B8-A149-C7E5-B598D6D597AF" name="TB_PASSAGEIRO">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:00:02 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
@@ -27,6 +27,19 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="NOME" id="8FBA7F9D-E99B-FEA4-A2A6-9236897CA43F">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 15:35:41 UTC</createdTime>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<engineerTo>
+<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="CPF" id="6DC7B61F-3927-D589-BD0F-CCD4E6CE2696">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:01:07 UTC</createdTime>
@@ -49,20 +62,6 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="ID_USUARIO" id="085DB0D8-9E91-2198-90CB-01D0582896B5">
-<createdBy>lipeg</createdBy>
-<createdTime>2023-08-28 13:04:44 UTC</createdTime>
-<generatorID>B44CA6E8-E514-A5E7-6ECC-334BB5ED0449</generatorID>
-<ownerDesignName>DataModeler Magna</ownerDesignName>
-<engineerTo>
-<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
-</engineerTo>
-<referedAttribute>12B0DCBC-9DC9-D8E7-31F6-E1D522D22690</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

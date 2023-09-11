@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1123DAA4-F8A6-BD1E-EB2A-D05CF97EF044" name="T_TPU_USUARIO">
-<createdBy>lipeg</createdBy>
-<createdTime>2023-08-28 13:01:59 UTC</createdTime>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="33DD4B43-587D-3F64-28B5-D4FD515AC8B1" name="TB_ESTADO">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 15:54:22 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_USUARIO" id="12B0DCBC-9DC9-D8E7-31F6-E1D522D22690">
-<createdBy>lipeg</createdBy>
-<createdTime>2023-08-28 13:03:22 UTC</createdTime>
+<Attribute name="ID_ESTADO" id="190CFC08-F316-D775-C61F-168AF6CAC086">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 15:54:40 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
@@ -27,30 +27,32 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="NOME_COMPLETO" id="4F0E96D6-1965-68DA-C7FE-EC39973323BF">
-<createdBy>lipeg</createdBy>
-<createdTime>2023-08-28 13:03:38 UTC</createdTime>
+<Attribute name="NOME" id="4B7B4381-883A-A508-B6ED-06D68A69E4ED">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 15:56:49 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="00D863EB-E8FF-D1DD-DF9D-610838E9BC63" name="T_TPU_USUARIO PK">
-<createdBy>lipeg</createdBy>
-<createdTime>2023-08-28 13:03:37 UTC</createdTime>
+<identifier id="966B5AE6-63F5-B0EE-A405-3F19F9003363" name="TB_ESTADO PK">
+<createdBy>Magna</createdBy>
+<createdTime>2023-09-01 15:56:48 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <engineerTo>
 <item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>12B0DCBC-9DC9-D8E7-31F6-E1D522D22690</attributeRef>
+<attributeRef>190CFC08-F316-D775-C61F-168AF6CAC086</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

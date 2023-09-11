@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="526ABEC3-4EF6-FE20-962E-25A0E2095953" name="T_TPU_VIAGEM">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="526ABEC3-4EF6-FE20-962E-25A0E2095953" name="TB_VIAGEM">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 00:58:42 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_CARTAO_ESTACAO" id="2919C044-CB17-575C-0561-64E87B5C7A5A">
+<Attribute name="ID_VIAGEM" id="2919C044-CB17-575C-0561-64E87B5C7A5A">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 00:58:57 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
@@ -55,7 +55,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_TIPO_PASSAGEM" id="40B93EC8-DA73-02AD-1851-FA192C6AD0BB">
+<Attribute name="ID_PASSAGEM" id="40B93EC8-DA73-02AD-1851-FA192C6AD0BB">
 <createdBy>lipeg</createdBy>
 <createdTime>2023-08-30 12:31:59 UTC</createdTime>
 <generatorID>7DC516FB-B313-9CD0-F5BC-B5626BB0C36D</generatorID>

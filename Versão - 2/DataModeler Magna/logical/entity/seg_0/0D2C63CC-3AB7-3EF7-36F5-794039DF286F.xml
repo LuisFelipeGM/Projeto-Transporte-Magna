@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0D2C63CC-3AB7-3EF7-36F5-794039DF286F" name="T_TPU_CARTAO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0D2C63CC-3AB7-3EF7-36F5-794039DF286F" name="TB_CARTAO">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:02:30 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
@@ -39,7 +39,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="TIPO_PASSAGEITO" id="0F2F6605-978B-6F1B-2EE0-5AB7904B4C3E">
+<Attribute name="TIPO_PASSAGEIRO" id="0F2F6605-978B-6F1B-2EE0-5AB7904B4C3E">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:03:11 UTC</createdTime>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
@@ -75,20 +75,6 @@
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="SALDO" id="6142AB38-9577-EE53-1208-2C67A1B0CCC9">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-22 01:04:03 UTC</createdTime>
-<ownerDesignName>DataModeler Magna</ownerDesignName>
-<engineerTo>
-<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT021</logicalDatatype>
-<dataTypePrecision>6</dataTypePrecision>
-<dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,6,2</ownDataTypeParameters>
 </Attribute>
 <Attribute name="ID_PASSAGEIRO" id="75430D52-B971-E7E7-06E3-F55E49E452BF">
 <createdBy>logonrmlocal</createdBy>

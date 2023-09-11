@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="69B80111-98DB-BC4F-6EDF-BDDFFDC7E146" name="T_TPU_LINHA">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9C24AFDA-04EA-C6E0-92DB-ED9D4EBF0337" name="TB_LINHA">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
 <generatorID>C54823CA-7DAB-2F9D-07E1-F9F2817BE329</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_LINHA" id="E86690A7-2565-806F-8792-E7C038CE9F7A">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<Column name="ID_LINHA" id="A19C3B1A-3612-C276-C48A-9A07E33D6E40">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
 <generatorID>E7A001FD-9C95-56D1-906C-A2B521CEB8E1</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -19,9 +19,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="NOME" id="0170411C-9B0F-8FC2-1A56-1459123A6601">
+<Column name="NOME" id="97698D61-1BBE-EF6F-81CA-70A5091ADA45">
 <createdBy>lipeg</createdBy>
-<createdTime>2023-08-28 13:12:15 UTC</createdTime>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
 <generatorID>39DB2AEB-6590-F50D-0208-CFB7F7DAF353</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -30,9 +30,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="NUMERO" id="D478C252-612E-1D4D-5ED7-0126DB370C20">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<Column name="NUMERO" id="7AAEA2A1-C43E-70B8-B085-5EF567D0EDBD">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
 <generatorID>5A737700-8978-CE80-6D48-BE11BE1771ED</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -41,30 +41,18 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CONEXAO" id="A980BBA1-82EF-12BF-771E-27733796BBDD">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-22 01:05:45 UTC</createdTime>
-<generatorID>6816E9B2-CBBD-1A34-2DA5-4B421B100062</generatorID>
-<ownerDesignName>DataModeler Magna</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>255</dataTypeSize>
-<ownDataTypeParameters>255,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="C9CDE084-33C8-4B64-8EFE-56937376A9E1" name="T_TPU_LINHA_PK">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<ind_PK_UK id="71A0CD4A-C248-E547-421B-087E3D80E1B8" name="TB_LINHA_PK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
 <generatorID>4F2D9365-F66E-B93F-815A-F46522C80EC7</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="E86690A7-2565-806F-8792-E7C038CE9F7A"/>
+<colUsage columnID="A19C3B1A-3612-C276-C48A-9A07E33D6E40"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

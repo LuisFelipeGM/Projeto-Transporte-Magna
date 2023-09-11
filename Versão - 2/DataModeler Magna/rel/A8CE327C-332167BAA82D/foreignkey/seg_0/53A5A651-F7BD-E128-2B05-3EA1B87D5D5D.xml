@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="53A5A651-F7BD-E128-2B05-3EA1B87D5D5D" containerWithKeyObject="635CA0A7-249E-D41A-B44E-89C63F350110" localFKIndex="53D066AD-0F61-86E7-A0D0-455D493B7871" name="TB_VIAGEM_TB_TIPO_PASSAGEM_FK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>7DC516FB-B313-9CD0-F5BC-B5626BB0C36D</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<referredTableLongName>TB_TIPO_PASSAGEM</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>40CA9823-C451-3CA7-17A1-2D6BC766D45A</referredTableID>
+<keyObject>97EBF87F-AE9E-7D8D-6544-EE83923FC95E</keyObject>
+<referredKeyID>97EBF87F-AE9E-7D8D-6544-EE83923FC95E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_PASSAGEM</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

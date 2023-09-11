@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="45A29384-E10F-1700-6A31-B86B6D4F3565" name="TB_ENDERECO">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>9D6023A5-4A6E-A7C9-96C4-550AFD93CB17</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_ENDERECO" id="57E5456B-AF2D-F6BF-A9A3-87894FB93B7E">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>AEDA948D-C753-BBBF-FC00-3A6809A27B9F</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOGRADOURO" id="1D945FED-0C75-6E6B-26B0-597F0CA86499">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>EF6A6C13-B14D-04AB-9552-C420F9FED381</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NUMERO" id="D85213B3-AC58-81FE-EEAE-8921F39324BE">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>775EBEFD-16C6-F90F-DE9B-4FF4BE92D00D</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COMPLEMENTO" id="3B95126F-A032-EC2E-4EC0-F15CA355ACBA">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>D8FC6FFB-EE41-17BA-4749-F433372EE68F</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_ESTACAO" id="AC63B9BF-39B6-8826-FAA8-4DC12E23BBD2">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>04503007-75C2-A308-751A-546AF1B1B0D7</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="11A0A42D-E037-AFFE-1C46-D91BB4ABBE65" referredColumn="6607169C-DFB9-B3A3-FFFD-25D53AAC4780"/>
+</associations>
+</Column>
+<Column name="ID_BAIRRO" id="0C13B6C1-5F44-A95C-A9C5-F12016AF361E">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>EAA492B6-91C5-419F-30D3-351C9550F9F0</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F8B5FDA4-6E85-D135-8706-F45C2E395A22" referredColumn="6F6CA1E5-F7D1-D8B4-F8AB-7B4074F64F01"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2B809141-1085-F31E-E9EC-DA2C8798DF02" name="TB_ENDERECO_PK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>2D3A8A87-C084-80E6-290F-489B03EDF904</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="57E5456B-AF2D-F6BF-A9A3-87894FB93B7E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6533BAAD-5F13-EF2B-E68B-E1C05B2D92DC" name="TB_ENDERECO_TB_ESTACAO_FK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>1758E79E-4DC5-E829-07C6-2572D6D30F14</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AC63B9BF-39B6-8826-FAA8-4DC12E23BBD2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A8B4EE5D-6BE2-3565-CA61-7C793A585F34" name="TB_ENDERECO_TB_BAIRRO_FK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>AA262504-49F6-FCD1-D546-4E370C755040</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0C13B6C1-5F44-A95C-A9C5-F12016AF361E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

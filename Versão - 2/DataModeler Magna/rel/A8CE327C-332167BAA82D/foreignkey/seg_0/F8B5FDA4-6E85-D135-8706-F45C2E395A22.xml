@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F8B5FDA4-6E85-D135-8706-F45C2E395A22" containerWithKeyObject="45A29384-E10F-1700-6A31-B86B6D4F3565" localFKIndex="A8B4EE5D-6BE2-3565-CA61-7C793A585F34" name="TB_ENDERECO_TB_BAIRRO_FK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>AA262504-49F6-FCD1-D546-4E370C755040</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<referredTableLongName>TB_BAIRRO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D95C766D-3277-0974-B76C-103C802D515A</referredTableID>
+<keyObject>98CB729B-5A70-B5BC-D5C1-B770075C4F53</keyObject>
+<referredKeyID>98CB729B-5A70-B5BC-D5C1-B770075C4F53</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_BAIRRO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EC21686D-7875-E0C8-2930-31A9DE48BD76" containerWithKeyObject="C3B854A0-6F20-DC91-2C97-76DE8D504F4C" localFKIndex="21974289-040D-7DC0-F126-16C2B96B9993" name="TB_CARTAO_TB_PASSAGEIRO_FK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>DE5CA29F-4155-B318-1E5B-A6BA7B432E28</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<referredTableLongName>TB_PASSAGEIRO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>3F511748-F5C6-6031-C6BF-9142097CF104</referredTableID>
+<keyObject>1668C685-5645-0105-97F1-38F7DE353D9E</keyObject>
+<referredKeyID>1668C685-5645-0105-97F1-38F7DE353D9E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_PASSAGEIRO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="61E198EF-1E6E-B705-2678-356017D1F034" containerWithKeyObject="860ACF0C-35CC-90C4-00E2-A4A5197FF311" localFKIndex="3F3691A2-B7B5-EB18-07EC-81E1137FFB53" name="TB_CONEXAO_TB_LINHA_FK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>B02B55F4-0D1E-F7C0-0A6D-A7848538934D</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<referredTableLongName>TB_LINHA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>9C24AFDA-04EA-C6E0-92DB-ED9D4EBF0337</referredTableID>
+<keyObject>71A0CD4A-C248-E547-421B-087E3D80E1B8</keyObject>
+<referredKeyID>71A0CD4A-C248-E547-421B-087E3D80E1B8</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_LINHA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

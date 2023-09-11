@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BD7B89C6-90FD-B15C-C4E8-E1CFBA1D1812" name="T_TPU_VIAGEM">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="635CA0A7-249E-D41A-B44E-89C63F350110" name="TB_VIAGEM">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
 <generatorID>526ABEC3-4EF6-FE20-962E-25A0E2095953</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_CARTAO_ESTACAO" id="9595DB2D-F1B1-93A1-04CB-0C8149D534E9">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<Column name="ID_VIAGEM" id="C48CC487-AB83-DAE8-9975-2539A49C0B4E">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
 <generatorID>2919C044-CB17-575C-0561-64E87B5C7A5A</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -19,22 +19,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="PRECO" id="38EB00CA-D7D4-BF7C-970A-3D44862167DB">
+<Column name="ID_ESTACAO" id="C6C8B191-8679-1E38-AA76-5BF77585C071">
 <createdBy>lipeg</createdBy>
-<createdTime>2023-08-30 13:27:23 UTC</createdTime>
-<generatorID>FD9AAC07-E670-9320-19AF-34C813668558</generatorID>
-<ownerDesignName>DataModeler Magna</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,5,2</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="ID_ESTACAO" id="7527F6A7-804F-17F4-E19C-CC445E59C58B">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
 <generatorID>1A1AE3BE-B202-AC9A-42C9-8A15ABCEFDD4</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -44,12 +31,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="BC89F58E-B171-F8D5-028C-FF6F30721342" referredColumn="D226D32E-9B0A-2E10-D6EB-58B011767055"/>
+<colAssociation fkAssociation="95EF41C6-98E2-66DF-F583-4A87E085D911" referredColumn="6607169C-DFB9-B3A3-FFFD-25D53AAC4780"/>
 </associations>
 </Column>
-<Column name="ID_TIPO_COMPRA" id="9AC27399-9E13-ED25-ED1C-B664ED50C68A">
+<Column name="ID_PASSAGEM" id="4CF09556-A5BB-5E9D-1047-736DFF18FC7C">
 <createdBy>lipeg</createdBy>
-<createdTime>2023-08-30 13:27:23 UTC</createdTime>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
 <generatorID>40B93EC8-DA73-02AD-1851-FA192C6AD0BB</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -59,43 +46,43 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="3ACD35F6-8F34-9E6B-4FFB-9005A18DDA4D" referredColumn="F5537572-571F-5E47-9F25-412189CABE21"/>
+<colAssociation fkAssociation="53A5A651-F7BD-E128-2B05-3EA1B87D5D5D" referredColumn="3E83ED5E-8C09-6B7C-91E2-0AF015E1D525"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="36AAED63-5B53-36F9-DA48-A6058AB91C24" name="T_TPU_CARTAO_ESTACAO_PK">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<ind_PK_UK id="204B4E05-ACED-CEAC-1AFD-AE6D80CBAC08" name="TB_VIAGEM_PK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
 <generatorID>99641B5D-A35B-63CD-DC15-B784C1640019</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="9595DB2D-F1B1-93A1-04CB-0C8149D534E9"/>
+<colUsage columnID="C48CC487-AB83-DAE8-9975-2539A49C0B4E"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="7D93AA81-7B22-6B02-98F2-534AE0882DFD" name="T_TPU_VIAGEM_T_TPU_ESTACAO_FK">
-<createdBy>logonrmlocal</createdBy>
-<createdTime>2023-08-22 01:05:45 UTC</createdTime>
+<ind_PK_UK id="56A31998-6B83-EA28-16D6-89AF71D67D2E" name="TB_VIAGEM_TB_ESTACAO_FK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
 <generatorID>BE83688E-AC22-1E07-C9D7-87F95CB7C895</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="7527F6A7-804F-17F4-E19C-CC445E59C58B"/>
+<colUsage columnID="C6C8B191-8679-1E38-AA76-5BF77585C071"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="1CF87EAE-CF82-2382-CA52-E599048F65F4" name="T_TPU_VIAGEM_T_TPU_TIPO_PASSAGEM_FK">
+<ind_PK_UK id="53D066AD-0F61-86E7-A0D0-455D493B7871" name="TB_VIAGEM_TB_TIPO_PASSAGEM_FK">
 <createdBy>lipeg</createdBy>
-<createdTime>2023-08-30 13:27:23 UTC</createdTime>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
 <generatorID>7DC516FB-B313-9CD0-F5BC-B5626BB0C36D</generatorID>
 <ownerDesignName>DataModeler Magna</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="9AC27399-9E13-ED25-ED1C-B664ED50C68A"/>
+<colUsage columnID="4CF09556-A5BB-5E9D-1047-736DFF18FC7C"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

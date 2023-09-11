@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5FC6DB52-3FAC-F890-A1D4-C1F77D848B84" containerWithKeyObject="D95C766D-3277-0974-B76C-103C802D515A" localFKIndex="14544DF9-4BA7-64C6-C522-B9360EF7A516" name="TB_BAIRRO_TB_CIDADE_FK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>E7A1999F-A4CA-8147-FB86-0F0C2B2BB9AD</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<referredTableLongName>TB_CIDADE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>39C121B0-C4D5-4661-279F-9F217864C533</referredTableID>
+<keyObject>8B24E9A4-105C-EA77-0976-0C54F52B3A93</keyObject>
+<referredKeyID>8B24E9A4-105C-EA77-0976-0C54F52B3A93</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_CIDADE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

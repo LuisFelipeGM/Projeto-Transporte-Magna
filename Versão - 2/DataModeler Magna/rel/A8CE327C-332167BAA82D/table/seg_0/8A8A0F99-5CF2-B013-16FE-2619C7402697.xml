@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8A8A0F99-5CF2-B013-16FE-2619C7402697" name="TB_ESTACAO">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>660602EB-B277-0A9B-8043-7017ABC98F59</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_ESTACAO" id="6607169C-DFB9-B3A3-FFFD-25D53AAC4780">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>EBD05E9E-A388-F12F-9B88-7CE09D781EBD</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="2CF45F64-F762-96B4-6FB6-EF2EF470EBDD">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>222AD313-D8E1-F77A-A5FF-A835DE93A1DC</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HORARIO_ABERTURA" id="5E63EAC7-E537-F240-F502-42D4636AF356">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>826B410F-5FDB-4E94-55A1-91D32ECBBA8E</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HORARIO_FECHAMENTO" id="23E0F9CC-ED53-C0F5-90B7-2B4DAFD27E71">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>2A78837C-4672-96A7-955E-1241BDBDDB3F</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EEBA11ED-4D88-3C62-E840-317DDFC4F6CC" name="TB_ESTACAO_PK">
+<createdBy>lipeg</createdBy>
+<createdTime>2023-09-11 12:46:35 UTC</createdTime>
+<generatorID>89C739AA-CA5E-8D16-DDDD-B8E9049EBF09</generatorID>
+<ownerDesignName>DataModeler Magna</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6607169C-DFB9-B3A3-FFFD-25D53AAC4780"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

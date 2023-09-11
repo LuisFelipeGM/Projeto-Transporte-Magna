@@ -27,20 +27,6 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="PRECO" id="FD9AAC07-E670-9320-19AF-34C813668558">
-<createdBy>lipeg</createdBy>
-<createdTime>2023-08-30 13:15:46 UTC</createdTime>
-<ownerDesignName>DataModeler Magna</ownerDesignName>
-<engineerTo>
-<item key="A8CE327C-3281-198B-7614-332167BAA82D" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,5,2</ownDataTypeParameters>
-</Attribute>
 <Attribute name="ID_ESTACAO" id="1A1AE3BE-B202-AC9A-42C9-8A15ABCEFDD4">
 <createdBy>logonrmlocal</createdBy>
 <createdTime>2023-08-22 01:04:53 UTC</createdTime>

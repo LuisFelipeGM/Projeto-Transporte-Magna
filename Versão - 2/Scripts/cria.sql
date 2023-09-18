@@ -5,7 +5,7 @@ create schema transporte;
 create table if not exists transporte.TB_PASSAGEIRO(
 	ID serial primary key,
 	NOME varchar(255) not null CHECK (NOME <> ''),
-	CPF numeric(11) not null,
+	CPF varchar(11) not null,
 	DATA_NASCIMENTO date not null,
 	unique(CPF)
 );

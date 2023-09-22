@@ -12,11 +12,10 @@ create table if not exists transporte.TB_PASSAGEIRO(
 
 
 -- CRIANDO TABELA CARTAO
-create type transporte.tipo_passageiro as enum('PASSE ESCOLAR', 'PASSE SENIOR', 'VALE TRANSPORTE', 'PASSE LIVRE', 'PASSE ESPECIAL');
 create table if not exists transporte.TB_CARTAO(
 	ID serial primary key,
 	NUMERO integer not null,
-	TIPO_PASSAGEIRO transporte.tipo_passageiro not null,
+	TIPO_PASSAGEIRO varchar(40) not null CHECK (TIPO_PASSAGEIRO <> ''),
 	DATA_ATIVACAO date not null default now()::date,
 	DATA_VALIDADE date not null default (now() + interval '1 year')::date,
 	FK_PASSAGEIRO integer not null references transporte.TB_PASSAGEIRO(ID) on delete cascade,

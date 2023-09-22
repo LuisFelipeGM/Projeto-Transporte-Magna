@@ -34,8 +34,8 @@ public class PassageiroController extends GenericController {
 
     final PassageiroService passageiroService;
 
-    public PassageiroController(PassageiroService usuarioService){
-        this.passageiroService = usuarioService;
+    public PassageiroController(PassageiroService passageiroService){
+        this.passageiroService = passageiroService;
     }
     
     @Operation(summary = "Lista todos os passageiros", description = "Lista todos os passageiros do sistema")
@@ -64,7 +64,7 @@ public class PassageiroController extends GenericController {
     public ResponseEntity<Object> save(@Valid @RequestBody PassageiroDto passageiroDto, BindingResult result){
         try {
             return result.hasErrors() ? ResponseEntity.unprocessableEntity().body(getErrors(result))
-                    : ResponseEntity.status(HttpStatus.CREATED).body(passageiroService.adicionaUsuario(passageiroDto));
+                    : ResponseEntity.status(HttpStatus.CREATED).body(passageiroService.adicionaPassageiro(passageiroDto));
         } catch (Exception e) {
             return handleErrors(e);
         }
@@ -76,7 +76,7 @@ public class PassageiroController extends GenericController {
     public ResponseEntity<Object> delete(@PathVariable Long id){
         Optional<PassageiroModel> optionalPassageiro = passageiroService.findById(id);
         return optionalPassageiro
-                .map(usuario -> {
+                .map(passageiro -> {
                     try {
                         passageiroService.deleteById(id);
                         return ResponseEntity.noContent().build();
@@ -97,7 +97,7 @@ public class PassageiroController extends GenericController {
                 return ResponseEntity.notFound().build();
         try {
             return result.hasErrors() ? ResponseEntity.unprocessableEntity().body(getErrors(result))
-                    : ResponseEntity.status(HttpStatus.CREATED).body(passageiroService.putUsuario(passageiroDto, id));
+                    : ResponseEntity.status(HttpStatus.CREATED).body(passageiroService.putPassageiro(passageiroDto, id));
         } catch (Exception e) {
             return handleErrors(e);
         }

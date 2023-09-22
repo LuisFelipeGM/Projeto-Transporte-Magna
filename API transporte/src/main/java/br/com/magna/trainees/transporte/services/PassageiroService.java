@@ -16,46 +16,46 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class PassageiroService extends EntityService<PassageiroModel> {
 
-	private final PassageiroRepository usuarioRepository;
+	private final PassageiroRepository passageiroRepository;
 
-	PassageiroService(JpaRepository<PassageiroModel, Long> repository, PassageiroRepository usuarioRepository) {
+	PassageiroService(JpaRepository<PassageiroModel, Long> repository, PassageiroRepository passageiroRepository) {
 		super(repository);
-		this.usuarioRepository = usuarioRepository;
+		this.passageiroRepository = passageiroRepository;
 	}
 
-	public PassageiroModel adicionaUsuario(PassageiroDto usuarioDto){
+	public PassageiroModel adicionaPassageiro(PassageiroDto passageiroDto){
 		try {
-			PassageiroModel usuario = new PassageiroModel();
-			BeanUtils.copyProperties(usuarioDto, usuario);
+			PassageiroModel passageiro = new PassageiroModel();
+			BeanUtils.copyProperties(passageiroDto, passageiro);
 
-			log.info("Cadastrando novo Usuario");
+			log.info("Cadastrando novo Passageiro");
 
-			return repository.save(usuario);
+			return repository.save(passageiro);
 
 		} catch (DataIntegrityViolationException e) {
-            log.error("Erro ao salvar o novo usuário: Restrição exclusiva violada.");
-            throw new RuntimeException("Erro ao salvar o novo usuário: Este CPF já está cadastrado no sistema.");
+            log.error("Erro ao salvar o novo passageiro: Restrição exclusiva violada.");
+            throw new RuntimeException("Erro ao salvar o novo passageiro: Este CPF já está cadastrado no sistema.");
         } catch (Exception e) {
-            log.error("Erro ao copiar as propriedades do DTO para o modelo de Usuario: " + e.getMessage());
-            throw new RuntimeException("Erro ao salvar o novo usuario.");
+            log.error("Erro ao copiar as propriedades do DTO para o modelo de Passageiro: " + e.getMessage());
+            throw new RuntimeException("Erro ao salvar o novo passageiro.");
         }
 	}
 
-	public PassageiroModel putUsuario(PassageiroDto usuarioDto, Long id){
+	public PassageiroModel putPassageiro(PassageiroDto passageiroDto, Long id){
 			try {
-			Optional<PassageiroModel> usuarioOptional = usuarioRepository.findById(id);
-			if (usuarioOptional.isPresent()) {
-				PassageiroModel usu = usuarioOptional.get();
-                BeanUtils.copyProperties(usuarioDto, usu);
+			Optional<PassageiroModel> passageiroOptional = passageiroRepository.findById(id);
+			if (passageiroOptional.isPresent()) {
+				PassageiroModel pass = passageiroOptional.get();
+                BeanUtils.copyProperties(passageiroDto, pass);
 
-                log.info("Atualizando Usuario de ID: " + id);
-                return repository.save(usu);
+                log.info("Atualizando Passageiro de ID: " + id);
+                return repository.save(pass);
 			} else {
-				throw new RuntimeException("Erro ao salvar o novo usuario.");
+				throw new RuntimeException("Erro ao atualizar o passageiro.");
 			}
 			} catch (Exception e) {
-				log.error("Erro ao copiar as propriedades do DTO para o modelo de Usuario: " + e.getMessage());
-            	throw new RuntimeException("Erro ao salvar o novo usuario.");
+				log.error("Erro ao copiar as propriedades do DTO para o modelo de Passageiro: " + e.getMessage());
+            	throw new RuntimeException("Erro ao atualizar o passageiro.");
 			}
 
 

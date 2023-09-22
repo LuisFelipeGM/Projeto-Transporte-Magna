@@ -22,6 +22,4 @@ drop table if exists transporte.TB_BAIRRO cascade;
 
 drop table if exists transporte.TB_ENDERECO cascade;
 
-drop type if exists transporte.tipo_passageiro;
-
 drop schema if exists transporte cascade;

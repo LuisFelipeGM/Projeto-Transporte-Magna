@@ -26,7 +26,7 @@ create table if not exists transporte.TB_CARTAO(
 create table if not exists transporte.TB_BILHETE(
 	ID serial primary key,
 	CODIGO UUID not null default gen_random_uuid(),
-	DATA_GERACAO date not null default now()::date,
+	DATA_GERACAO timestamp not null,
 	UTILIZADO boolean not null default false
 );
 

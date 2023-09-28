@@ -347,9 +347,6 @@ insert into transporte.TB_CIDADE(NOME, FK_ESTADO) values
 
 
 
-
-
-
 	
 	
 	

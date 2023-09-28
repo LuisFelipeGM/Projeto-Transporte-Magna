@@ -83,10 +83,5 @@ public abstract class EntityService<T> implements IEntityService<T> {
             return Optional.empty();
         }
     }
-
-    @Transactional
-    public List<T> findAll() {
-        return repository.findAll();
-    }
 	
 }

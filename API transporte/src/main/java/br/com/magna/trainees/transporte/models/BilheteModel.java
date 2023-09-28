@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,6 +27,9 @@ public class BilheteModel {
 
 	@Column(nullable = false)
 	private boolean utilizado;
+	
+	@OneToOne(mappedBy = "bilhete")
+	private TipoPassagemModel tipoPassagem;
 
 	public BilheteModel() {
 		this.codigo = UUID.randomUUID();
@@ -64,5 +68,15 @@ public class BilheteModel {
 	public void setUtilizado(boolean utilizado) {
 		this.utilizado = utilizado;
 	}
+
+	public TipoPassagemModel getTipoPassagem() {
+		return tipoPassagem;
+	}
+
+	public void setTipoPassagem(TipoPassagemModel tipoPassagem) {
+		this.tipoPassagem = tipoPassagem;
+	}
+	
+	
 
 }

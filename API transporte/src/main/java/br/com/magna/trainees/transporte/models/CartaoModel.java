@@ -15,8 +15,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "TB_CARTAO")
@@ -43,6 +45,10 @@ public class CartaoModel {
 	@JoinColumn(name = "FK_PASSAGEIRO", foreignKey = @ForeignKey(name = "FK_PASSAGEIRO_CARTAO"))
 	@JsonIgnore
 	private PassageiroModel passageiro;
+	
+	@OneToMany(mappedBy = "cartao")
+	private List<TipoPassagemModel> tipoPassagens;
+
 
 	public Long getId() {
 		return id;
@@ -91,5 +97,17 @@ public class CartaoModel {
 	public void setPassageiro(PassageiroModel passageiro) {
 		this.passageiro = passageiro;
 	}
+
+	public List<TipoPassagemModel> getTipoPassagens() {
+		return tipoPassagens;
+	}
+
+	public void setTipoPassagens(List<TipoPassagemModel> tipoPassagens) {
+		this.tipoPassagens = tipoPassagens;
+	}
+
+	
+	
+	
 
 }

@@ -1,6 +1,6 @@
 package br.com.magna.trainees.transporte.models;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import jakarta.persistence.Column;
@@ -24,14 +24,14 @@ public class BilheteModel {
 	private UUID codigo;
 	
 	@Column(nullable = false)
-	private LocalDate dataGeracao;
+	private LocalDateTime dataGeracao;
 	
 	@Column(nullable = false)
 	private boolean utilizado;
 	
 	public BilheteModel() {
 		this.codigo = UUID.randomUUID();
-		this.dataGeracao = LocalDate.now();
+		this.dataGeracao = LocalDateTime.now().withNano(0);
 		this.utilizado = false;
 	}
 

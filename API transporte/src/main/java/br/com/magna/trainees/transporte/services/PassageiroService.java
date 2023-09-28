@@ -2,6 +2,8 @@ package br.com.magna.trainees.transporte.services;
 
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,11 +12,11 @@ import org.springframework.stereotype.Service;
 import br.com.magna.trainees.transporte.dtos.PassageiroDto;
 import br.com.magna.trainees.transporte.models.PassageiroModel;
 import br.com.magna.trainees.transporte.repositories.PassageiroRepository;
-import lombok.extern.slf4j.Slf4j;
 
 @Service
-@Slf4j
 public class PassageiroService extends EntityService<PassageiroModel> {
+	
+	private static final Logger log = LoggerFactory.getLogger(PassageiroService.class);
 
 	private final PassageiroRepository passageiroRepository;
 
@@ -37,7 +39,7 @@ public class PassageiroService extends EntityService<PassageiroModel> {
             throw new RuntimeException("Erro ao salvar o novo passageiro: Este CPF já está cadastrado no sistema.");
         } catch (Exception e) {
             log.error("Erro ao copiar as propriedades do DTO para o modelo de Passageiro: " + e.getMessage());
-            throw new RuntimeException("Erro ao salvar o novo passageiro.");
+            throw new RuntimeException(e.getMessage());
         }
 	}
 
@@ -55,7 +57,7 @@ public class PassageiroService extends EntityService<PassageiroModel> {
 			}
 			} catch (Exception e) {
 				log.error("Erro ao copiar as propriedades do DTO para o modelo de Passageiro: " + e.getMessage());
-            	throw new RuntimeException("Erro ao atualizar o passageiro.");
+            	throw new RuntimeException(e.getMessage());
 			}
 
 

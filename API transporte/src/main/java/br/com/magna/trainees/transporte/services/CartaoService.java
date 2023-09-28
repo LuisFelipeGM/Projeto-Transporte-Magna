@@ -2,6 +2,8 @@ package br.com.magna.trainees.transporte.services;
 
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,11 +14,11 @@ import br.com.magna.trainees.transporte.models.CartaoModel;
 import br.com.magna.trainees.transporte.models.PassageiroModel;
 import br.com.magna.trainees.transporte.repositories.CartaoRepository;
 import br.com.magna.trainees.transporte.repositories.PassageiroRepository;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Service
 public class CartaoService extends EntityService<CartaoModel> {
+	
+	private static final Logger log = LoggerFactory.getLogger(CartaoService.class);
 
     private final CartaoRepository cartaoRepository;
     private final PassageiroRepository passageiroRepository;
@@ -29,7 +31,7 @@ public class CartaoService extends EntityService<CartaoModel> {
 
     public CartaoModel adicionaCartao(CartaoDto cartaoDto){
         try {
-            Optional<PassageiroModel> passageiroOptional = passageiroRepository.findById(cartaoDto.getIdPassageiro());
+            Optional<PassageiroModel> passageiroOptional = passageiroRepository.findById(cartaoDto.idPassageiro());
             if (passageiroOptional.isPresent()) {
                 PassageiroModel passageiro = passageiroOptional.get();
                 CartaoModel cartao =  new CartaoModel();
@@ -48,7 +50,7 @@ public class CartaoService extends EntityService<CartaoModel> {
             throw new RuntimeException("Erro ao salvar o novo cartão!");
         } catch (Exception e) {
             log.error("Erro ao copiar as propriedades do DTO para o modelo de Cartão: " + e.getMessage());
-            throw new RuntimeException("Erro ao salvar o novo cartão.");
+            throw new RuntimeException(e.getMessage());
 
         }
     }
@@ -67,7 +69,7 @@ public class CartaoService extends EntityService<CartaoModel> {
                }
             } catch (Exception e) {
 				log.error("Erro ao copiar as propriedades do DTO para o modelo de Cartão: " + e.getMessage());
-            	throw new RuntimeException("Erro ao atualizar o Cartão.");
+            	throw new RuntimeException(e.getMessage());
 			}
         }
 

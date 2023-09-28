@@ -2,17 +2,19 @@ package br.com.magna.trainees.transporte.services;
 
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 import br.com.magna.trainees.transporte.excptions.ValidacaoException;
 import br.com.magna.trainees.transporte.models.BilheteModel;
 import br.com.magna.trainees.transporte.repositories.BilheteRepository;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Service
 public class BilheteService extends EntityService<BilheteModel>{
+	
+	private static final Logger log = LoggerFactory.getLogger(BilheteService.class);
 
 	private final BilheteRepository bilheteRepository;
 	

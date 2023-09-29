@@ -1,5 +1,6 @@
 package br.com.magna.trainees.transporte.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
@@ -21,10 +22,12 @@ public class TipoPassagemModel {
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "FK_CARTAO", foreignKey = @ForeignKey(name = "FK_CARTAO_TIPO_PASSAGEM"))
+	@JsonIgnore
 	private CartaoModel cartao;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "FK_BILHETE", foreignKey = @ForeignKey(name = "FK_BILHETE_TIPO_PASSAGEM"))
+	@JsonIgnore
 	private BilheteModel bilhete;
 
 	public Long getId() {

@@ -1,5 +1,6 @@
 package br.com.magna.trainees.transporte.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class LinhaModel {
     private int numero;
 
     @OneToMany(mappedBy = "linha")
+    @JsonIgnore
     private List<ConexaoModel> conexao;
 
     public Long getId() {

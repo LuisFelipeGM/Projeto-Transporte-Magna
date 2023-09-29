@@ -3,6 +3,7 @@ package br.com.magna.trainees.transporte.models;
 import jakarta.persistence.*;
 
 import java.sql.Time;
+import java.util.List;
 
 @Entity
 @Table(name = "TB_ESTACAO")
@@ -20,6 +21,9 @@ public class EstacaoModel {
 
     @Column(nullable = false)
     private Time horarioFechamento;
+
+    @OneToMany(mappedBy = "estacao")
+    private List<ConexaoModel> conexao;
 
     public Long getId() {
         return id;

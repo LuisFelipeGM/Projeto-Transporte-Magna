@@ -1,5 +1,6 @@
 package br.com.magna.trainees.transporte.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,6 +17,7 @@ public class ConexaoModel {
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "FK_ESTACAO", foreignKey = @ForeignKey(name = "FK_ESTACAO_CONEXAO"))
+    @JsonIgnore
     private EstacaoModel estacao;
 
     public Long getId() {

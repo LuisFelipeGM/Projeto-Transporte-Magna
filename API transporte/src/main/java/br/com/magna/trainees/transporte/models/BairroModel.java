@@ -1,6 +1,9 @@
 package br.com.magna.trainees.transporte.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "TB_BAIRRO")
@@ -16,6 +19,10 @@ public class BairroModel {
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "FK_CIDADE", foreignKey = @ForeignKey(name = "FK_CIDADE_BAIRRO"))
     private CidadeModel cidade;
+
+    @OneToMany(mappedBy = "bairro")
+    @JsonIgnore
+    private List<EnderecoModel> endereco;
 
     public Long getId() {
         return id;
@@ -39,5 +46,13 @@ public class BairroModel {
 
     public void setCidade(CidadeModel cidade) {
         this.cidade = cidade;
+    }
+
+    public List<EnderecoModel> getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(List<EnderecoModel> endereco) {
+        this.endereco = endereco;
     }
 }

@@ -1,11 +1,8 @@
 package br.com.magna.trainees.transporte.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "TB_LINHA")
@@ -20,6 +17,9 @@ public class LinhaModel {
 
     @Column(nullable = false)
     private int numero;
+
+    @OneToMany(mappedBy = "linha")
+    private List<ConexaoModel> conexao;
 
     public Long getId() {
         return id;

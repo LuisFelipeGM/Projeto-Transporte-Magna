@@ -1,6 +1,9 @@
 package br.com.magna.trainees.transporte.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "TB_ESTADO")
@@ -16,6 +19,9 @@ public class EstadoModel {
     @Column(nullable = false, length = 2)
     private String sigla;
 
+    @OneToMany(mappedBy = "estado")
+    @JsonIgnore
+    private List<CidadeModel> cidade;
 
     public Long getId() {
         return id;
@@ -39,5 +45,13 @@ public class EstadoModel {
 
     public void setSigla(String sigla) {
         this.sigla = sigla;
+    }
+
+    public List<CidadeModel> getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(List<CidadeModel> cidade) {
+        this.cidade = cidade;
     }
 }

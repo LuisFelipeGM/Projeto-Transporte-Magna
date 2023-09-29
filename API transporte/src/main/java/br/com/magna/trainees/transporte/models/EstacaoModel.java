@@ -25,6 +25,9 @@ public class EstacaoModel {
     @OneToMany(mappedBy = "estacao")
     private List<ConexaoModel> conexao;
 
+    @OneToOne(mappedBy = "estacao")
+    private EnderecoModel endereco;
+
     public Long getId() {
         return id;
     }
@@ -55,5 +58,21 @@ public class EstacaoModel {
 
     public void setHorarioFechamento(Time horarioFechamento) {
         this.horarioFechamento = horarioFechamento;
+    }
+
+    public List<ConexaoModel> getConexao() {
+        return conexao;
+    }
+
+    public void setConexao(List<ConexaoModel> conexao) {
+        this.conexao = conexao;
+    }
+
+    public EnderecoModel getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(EnderecoModel endereco) {
+        this.endereco = endereco;
     }
 }

@@ -35,17 +35,17 @@ public class BilheteService extends EntityService<BilheteModel>{
 		}
 	}
 	
-	public BilheteModel utilizarBilhete(Long id) {
+	public BilheteModel utilizarBilhete(BilheteModel bilheteModel) {
 		try {
-			Optional<BilheteModel> bilheteOptional = bilheteRepository.findById(id);
+			Optional<BilheteModel> bilheteOptional = bilheteRepository.findById(bilheteModel.getId());
 			if(bilheteOptional.isPresent()) {
 				BilheteModel bilhete = bilheteOptional.get();
 				
-				if (bilhete.isUtilizado() == true)
+				if (bilhete.isUtilizado())
 					throw new ValidacaoException("Bilhete já utilizado! Compre outro!");
 				
 				bilhete.setUtilizado(true);
-				log.info("Utilizando o Bilhete do ID: " + id);
+				log.info("Utilizando o Bilhete do ID: " + bilheteModel.getId());
 				return repository.save(bilhete);
 			} else {
 				throw new RuntimeException("Bilhete não encontrado");

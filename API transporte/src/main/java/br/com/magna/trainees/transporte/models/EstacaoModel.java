@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.sql.Time;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "TB_ESTACAO")
 public class EstacaoModel {
@@ -27,6 +29,10 @@ public class EstacaoModel {
 
     @OneToOne(mappedBy = "estacao")
     private EnderecoModel endereco;
+    
+    @OneToMany(mappedBy = "estacao")
+    @JsonIgnore
+    private List<ViagemModel> viagem;
 
     public Long getId() {
         return id;
@@ -75,4 +81,16 @@ public class EstacaoModel {
     public void setEndereco(EnderecoModel endereco) {
         this.endereco = endereco;
     }
+
+	public List<ViagemModel> getViagem() {
+		return viagem;
+	}
+
+	public void setViagem(List<ViagemModel> viagem) {
+		this.viagem = viagem;
+	}
+
+	
+    
+    
 }

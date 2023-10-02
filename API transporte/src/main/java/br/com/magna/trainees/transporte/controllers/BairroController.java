@@ -2,8 +2,6 @@ package br.com.magna.trainees.transporte.controllers;
 
 import br.com.magna.trainees.transporte.dtos.BairroDto;
 import br.com.magna.trainees.transporte.models.BairroModel;
-import br.com.magna.trainees.transporte.models.CartaoModel;
-import br.com.magna.trainees.transporte.models.CidadeModel;
 import br.com.magna.trainees.transporte.services.BairroService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;

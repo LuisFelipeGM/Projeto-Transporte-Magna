@@ -8,12 +8,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class CidadeService extends EntityService<CidadeModel> {
 
-    private final CidadeRepository cidadeRepository;
 
 
-    CidadeService(JpaRepository<CidadeModel, Long> repository, CidadeRepository cidadeRepository) {
+    CidadeService(JpaRepository<CidadeModel, Long> repository) {
         super(repository);
-        this.cidadeRepository = cidadeRepository;
     }
 
     public CidadeModel findBynome(String nome) {

@@ -8,11 +8,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class EstadoService extends EntityService<EstadoModel>{
 
-    private final EstadoRepository estadoRepository;
 
-    EstadoService(JpaRepository<EstadoModel, Long> repository, EstadoRepository estadoRepository) {
+    EstadoService(JpaRepository<EstadoModel, Long> repository) {
         super(repository);
-        this.estadoRepository = estadoRepository;
     }
 
 

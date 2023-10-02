@@ -11,9 +11,6 @@ import br.com.magna.trainees.transporte.excptions.TipoPassagemInvalidaException;
 import br.com.magna.trainees.transporte.models.BilheteModel;
 import br.com.magna.trainees.transporte.models.CartaoModel;
 import br.com.magna.trainees.transporte.models.TipoPassagemModel;
-import br.com.magna.trainees.transporte.repositories.BilheteRepository;
-import br.com.magna.trainees.transporte.repositories.CartaoRepository;
-import br.com.magna.trainees.transporte.repositories.TipoPassagemRepository;
 
 
 @Service
@@ -21,16 +18,14 @@ public class TipoPassagemService extends EntityService<TipoPassagemModel> {
 
 	private static final Logger log = LoggerFactory.getLogger(TipoPassagemService.class);
 
-	private final TipoPassagemRepository tipoPassagemRepository;
 	
 	private final CartaoService cartaoService;
 	
 	private final BilheteService bilheteService;
 	
 	public TipoPassagemService(JpaRepository<TipoPassagemModel, Long> repository,
-			TipoPassagemRepository tipoPassagemRepository, CartaoService cartaoService, BilheteService bilheteService) {
+			 CartaoService cartaoService, BilheteService bilheteService) {
 		super(repository);
-		this.tipoPassagemRepository = tipoPassagemRepository;
 		this.cartaoService = cartaoService;
 		this.bilheteService = bilheteService;
 	}

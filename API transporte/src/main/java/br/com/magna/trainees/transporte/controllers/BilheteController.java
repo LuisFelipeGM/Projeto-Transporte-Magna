@@ -87,7 +87,9 @@ public class BilheteController extends GenericController{
 	@PutMapping("/{id}")
 	public ResponseEntity<Object> utilizarBilhete(@PathVariable Long id){
 		try {
-			return ResponseEntity.status(HttpStatus.CREATED).body(bilheteService.utilizarBilhete(id));
+			BilheteModel bilhete = new BilheteModel();
+			bilhete.setId(id);
+			return ResponseEntity.status(HttpStatus.CREATED).body(bilheteService.utilizarBilhete(bilhete));
 		} catch (Exception e) {
 			return handleErrors(e);
 		}

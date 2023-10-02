@@ -7,8 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
-import br.com.magna.trainees.transporte.dtos.TipoPassagemDto;
-import br.com.magna.trainees.transporte.excptions.ValidacaoException;
+import br.com.magna.trainees.transporte.excptions.TipoPassagemInvalidaException;
 import br.com.magna.trainees.transporte.models.BilheteModel;
 import br.com.magna.trainees.transporte.models.CartaoModel;
 import br.com.magna.trainees.transporte.models.TipoPassagemModel;
@@ -24,60 +23,61 @@ public class TipoPassagemService extends EntityService<TipoPassagemModel> {
 
 	private final TipoPassagemRepository tipoPassagemRepository;
 	
-	private final CartaoRepository cartaoRepository;
+	private final CartaoService cartaoService;
 	
-	private final BilheteRepository bilheteRepository;
+	private final BilheteService bilheteService;
 	
-	
-	
-
 	public TipoPassagemService(JpaRepository<TipoPassagemModel, Long> repository,
-			TipoPassagemRepository tipoPassagemRepository, CartaoRepository cartaoRepository,
-			BilheteRepository bilheteRepository) {
+			TipoPassagemRepository tipoPassagemRepository, CartaoService cartaoService, BilheteService bilheteService) {
 		super(repository);
 		this.tipoPassagemRepository = tipoPassagemRepository;
-		this.cartaoRepository = cartaoRepository;
-		this.bilheteRepository = bilheteRepository;
+		this.cartaoService = cartaoService;
+		this.bilheteService = bilheteService;
 	}
-	
-	public TipoPassagemModel adicionaTipoPassagem(TipoPassagemDto tipoPassagemDto) {
-		try {
-			
-			if(tipoPassagemDto.idBilhete() == null && tipoPassagemDto.idCartao() == null)
-				throw new ValidacaoException("Deve ser utilizado uma forma de "
-						+ "passagem para realizar a viagem!");
-			
-			if(tipoPassagemDto.idBilhete() != null && tipoPassagemDto.idCartao() != null)
-				throw new ValidacaoException("Escolha apenas um tipo de passagem para utilizar, "
-						+ "Cartão ou Bilhete");
-			
-			Optional<CartaoModel> cartaoOptional = cartaoRepository.findById(tipoPassagemDto.idCartao());
-			Optional<BilheteModel> bilheteOptional = bilheteRepository.findById(tipoPassagemDto.idBilhete());
-			TipoPassagemModel tipoPassagem = new TipoPassagemModel();
-			if(cartaoOptional.isPresent()) {
-				CartaoModel cartao = cartaoOptional.get();
-				tipoPassagem.setCartao(cartao);
-				
-				log.info("Cadastrando novo Tipo Passagem (CARTÃO)");
-				
-				return repository.save(tipoPassagem);
-			}
-			if(bilheteOptional.isPresent()) {
-				BilheteModel bilhete = bilheteOptional.get();
-				tipoPassagem.setBilhete(bilhete);
-				
-				log.info("Cadastrando novo Tipo Passagem (BILHETE)");
-				
-				return repository.save(tipoPassagem);
-			}
-			
-			throw new RuntimeException("Tipo da Passagem informado não foi encontrado");
-			
-		} catch (Exception e) {
-			log.error("Erro ao criar o registro de TipoPassagem: " + e.getMessage());
-            throw new RuntimeException(e.getMessage());
-		}
+
+	public TipoPassagemModel adicionaTipoPassagem(Long idBilhete, Long idCartao) {
+	    try {
+	        if ((idBilhete == null && idCartao == null) || (idBilhete != null && idCartao != null)) {
+	            throw new TipoPassagemInvalidaException("Escolha apenas um tipo de passagem para utilizar, Cartão ou Bilhete");
+	        }
+
+	        TipoPassagemModel tipoPassagem = new TipoPassagemModel();
+	        
+	        if (idBilhete != null) {
+	            Optional<BilheteModel> bilheteOptional = bilheteService.findById(idBilhete);
+	            if (bilheteOptional.isPresent()) {
+	                BilheteModel bilhete = bilheteOptional.get();
+	                bilheteService.utilizarBilhete(bilhete);
+	                tipoPassagem.setBilhete(bilhete);
+	                log.info("Cadastrando novo Tipo Passagem (BILHETE)");
+	            } else {
+	                throw new TipoPassagemInvalidaException("Bilhete não encontrado");
+	            }
+	            
+	        } else if (idCartao != null) {
+	            Optional<CartaoModel> cartaoOptional = cartaoService.findById(idCartao);
+	            if (cartaoOptional.isPresent()) {
+	                CartaoModel cartao = cartaoOptional.get();
+	                tipoPassagem.setCartao(cartao);
+	                log.info("Cadastrando novo Tipo Passagem (CARTÃO)");
+	            } else {
+	                throw new TipoPassagemInvalidaException("Cartão não encontrado");
+	            }
+	            
+	        } else {
+	            throw new TipoPassagemInvalidaException("Nenhum tipo de passagem especificado");
+	        }
+	        
+	        return repository.save(tipoPassagem);
+	    } catch (TipoPassagemInvalidaException e) {
+	        log.error("Erro ao criar o registro de TipoPassagem: " + e.getMessage());
+	        throw e;
+	    } catch (Exception e) {
+	        log.error("Erro ao criar o registro de TipoPassagem: " + e.getMessage());
+	        throw new RuntimeException(e.getMessage());
+	    }
 	}
+
 	
 	
 

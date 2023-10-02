@@ -2,7 +2,6 @@ package br.com.magna.trainees.transporte.controllers;
 
 import br.com.magna.trainees.transporte.dtos.EstacaoDto;
 import br.com.magna.trainees.transporte.models.EstacaoModel;
-import br.com.magna.trainees.transporte.models.LinhaModel;
 import br.com.magna.trainees.transporte.services.EstacaoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;

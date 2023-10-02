@@ -38,7 +38,7 @@ public class PassageiroService extends EntityService<PassageiroModel> {
             log.error("Erro ao salvar o novo passageiro: Restrição exclusiva violada.");
             throw new RuntimeException("Erro ao salvar o novo passageiro: Este CPF já está cadastrado no sistema.");
         } catch (Exception e) {
-            log.error("Erro ao copiar as propriedades do DTO para o modelo de Passageiro: " + e.getMessage());
+            log.error("Erro ao cadastrar novo passageiro: " + e.getMessage());
             throw new RuntimeException(e.getMessage());
         }
 	}

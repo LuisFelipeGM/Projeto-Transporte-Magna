@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.magna.trainees.transporte.dtos.ViagemDto;
-import br.com.magna.trainees.transporte.models.CartaoModel;
-import br.com.magna.trainees.transporte.models.ConexaoModel;
 import br.com.magna.trainees.transporte.models.ViagemModel;
 import br.com.magna.trainees.transporte.services.ViagemService;
 import io.swagger.v3.oas.annotations.Operation;

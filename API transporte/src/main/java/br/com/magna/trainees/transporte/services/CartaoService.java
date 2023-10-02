@@ -13,66 +13,64 @@ import br.com.magna.trainees.transporte.dtos.CartaoDto;
 import br.com.magna.trainees.transporte.models.CartaoModel;
 import br.com.magna.trainees.transporte.models.PassageiroModel;
 import br.com.magna.trainees.transporte.repositories.CartaoRepository;
-import br.com.magna.trainees.transporte.repositories.PassageiroRepository;
 
 @Service
 public class CartaoService extends EntityService<CartaoModel> {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(CartaoService.class);
 
-    private final CartaoRepository cartaoRepository;
-    private final PassageiroRepository passageiroRepository;
+	private final CartaoRepository cartaoRepository;
+	private final PassageiroService passageiroService;
 
-    CartaoService(JpaRepository<CartaoModel, Long> repository, CartaoRepository cartaoRepository, PassageiroRepository passageiroRepository) {
-        super(repository);
-        this.cartaoRepository = cartaoRepository;
-        this.passageiroRepository = passageiroRepository;
-    }
+	public CartaoService(JpaRepository<CartaoModel, Long> repository, CartaoRepository cartaoRepository,
+			PassageiroService passageiroService) {
+		super(repository);
+		this.cartaoRepository = cartaoRepository;
+		this.passageiroService = passageiroService;
+	}
 
-    public CartaoModel adicionaCartao(CartaoDto cartaoDto){
-        try {
-            Optional<PassageiroModel> passageiroOptional = passageiroRepository.findById(cartaoDto.idPassageiro());
-            if (passageiroOptional.isPresent()) {
-                PassageiroModel passageiro = passageiroOptional.get();
-                CartaoModel cartao =  new CartaoModel();
-                BeanUtils.copyProperties(cartaoDto, cartao);
-                cartao.setPassageiro(passageiro);
-        
-                log.info("Cadastrando novo Cartão");
-        
-                return repository.save(cartao);
-                
-            } else {
-                throw new Exception("Passageiro não encontrado");
-            }
-        } catch (DataIntegrityViolationException e) {
-            log.error("Erro ao salvar o novo cartão: Restrição exclusiva violada.");
-            throw new RuntimeException("Erro ao salvar o novo cartão!");
-        } catch (Exception e) {
-            log.error("Erro ao copiar as propriedades do DTO para o modelo de Cartão: " + e.getMessage());
-            throw new RuntimeException(e.getMessage());
+	public CartaoModel adicionaCartao(CartaoDto cartaoDto) {
+		try {
+			Optional<PassageiroModel> passageiroOptional = passageiroService.findById(cartaoDto.idPassageiro());
+			if (passageiroOptional.isPresent()) {
+				PassageiroModel passageiro = passageiroOptional.get();
+				CartaoModel cartao = new CartaoModel();
+				BeanUtils.copyProperties(cartaoDto, cartao);
+				cartao.setPassageiro(passageiro);
 
-        }
-    }
+				log.info("Cadastrando novo Cartão");
 
-        public CartaoModel putCartao(CartaoDto cartaoDto, Long id){
-            try {
-                Optional<CartaoModel> cartaoOptional = cartaoRepository.findById(id);
-               if (cartaoOptional.isPresent()) {
-                    CartaoModel cartao = cartaoOptional.get();
-                    BeanUtils.copyProperties(cartaoDto, cartao);
+				return repository.save(cartao);
 
-                    log.info("Atualizando Cartao de ID: " + id);
-                    return repository.save(cartao);
-               } else {
-                    throw new RuntimeException("Erro ao atualizar o Cartão.");
-               }
-            } catch (Exception e) {
-				log.error("Erro ao copiar as propriedades do DTO para o modelo de Cartão: " + e.getMessage());
-            	throw new RuntimeException(e.getMessage());
+			} else {
+				throw new Exception("Passageiro não encontrado");
 			}
-        }
+		} catch (DataIntegrityViolationException e) {
+			log.error("Erro ao salvar o novo cartão: Restrição exclusiva violada.");
+			throw new RuntimeException(e.getMessage());
+		} catch (Exception e) {
+			log.error("Erro ao cadastrar novo Cartão: " + e.getMessage());
+			throw new RuntimeException(e.getMessage());
 
+		}
+	}
 
-    
+	public CartaoModel putCartao(CartaoDto cartaoDto, Long id) {
+		try {
+			Optional<CartaoModel> cartaoOptional = cartaoRepository.findById(id);
+			if (cartaoOptional.isPresent()) {
+				CartaoModel cartao = cartaoOptional.get();
+				BeanUtils.copyProperties(cartaoDto, cartao);
+
+				log.info("Atualizando Cartao de ID: " + id);
+				return repository.save(cartao);
+			} else {
+				throw new RuntimeException("Erro ao atualizar o Cartão.");
+			}
+		} catch (Exception e) {
+			log.error("Erro ao atualizar o Cartão: " + e.getMessage());
+			throw new RuntimeException(e.getMessage());
+		}
+	}
+
 }

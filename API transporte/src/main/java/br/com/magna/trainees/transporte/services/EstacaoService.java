@@ -15,7 +15,7 @@ import java.util.Optional;
 @Service
 public class EstacaoService extends EntityService<EstacaoModel>{
 
-    private static final Logger log = LoggerFactory.getLogger(PassageiroService.class);
+    private static final Logger log = LoggerFactory.getLogger(EstacaoService.class);
     private final EstacaoRepository estacaoRepository;
 
     EstacaoService(JpaRepository<EstacaoModel, Long> repository, EstacaoRepository estacaoRepository) {
@@ -36,7 +36,7 @@ public class EstacaoService extends EntityService<EstacaoModel>{
             log.info("Cadastrando nova Estação");
             return repository.save(estacao);
         } catch (Exception e) {
-            log.error("Erro ao copiar as propriedades do DTO para o modelo da Estação: " + e.getMessage());
+            log.error("Erro ao cadastrar nova Estação: " + e.getMessage());
             throw new RuntimeException(e.getMessage());
         }
     }

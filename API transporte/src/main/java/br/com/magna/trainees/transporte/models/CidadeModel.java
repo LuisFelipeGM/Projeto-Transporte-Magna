@@ -3,6 +3,8 @@ package br.com.magna.trainees.transporte.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "TB_CIDADE")
 public class CidadeModel {
@@ -18,9 +20,9 @@ public class CidadeModel {
     @JoinColumn(name = "FK_ESTADO", foreignKey = @ForeignKey(name = "FK_ESTADO_CIDADE"))
     private EstadoModel estado;
 
-    @OneToOne(mappedBy = "cidade")
+    @OneToMany(mappedBy = "cidade")
     @JsonIgnore
-    private BairroModel bairro;
+    private List<BairroModel> bairro;
 
     public Long getId() {
         return id;
@@ -46,11 +48,11 @@ public class CidadeModel {
         this.estado = estado;
     }
 
-    public BairroModel getBairro() {
+    public List<BairroModel> getBairro() {
         return bairro;
     }
 
-    public void setBairro(BairroModel bairro) {
+    public void setBairro(List<BairroModel> bairro) {
         this.bairro = bairro;
     }
 }

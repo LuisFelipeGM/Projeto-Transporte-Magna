@@ -20,7 +20,7 @@ public class BairroModel {
     @JoinColumn(name = "FK_CIDADE", foreignKey = @ForeignKey(name = "FK_CIDADE_BAIRRO"))
     private CidadeModel cidade;
 
-    @OneToMany(mappedBy = "bairro")
+    @OneToMany(mappedBy = "bairro", cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JsonIgnore
     private List<EnderecoModel> endereco;
 

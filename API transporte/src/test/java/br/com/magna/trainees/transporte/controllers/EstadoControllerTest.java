@@ -1,7 +1,7 @@
 package br.com.magna.trainees.transporte.controllers;
 
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +10,8 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -38,7 +40,9 @@ public class EstadoControllerTest {
                 new ParameterizedTypeReference<List<EstadoModel>>() {}
         );
 
-        Assert.assertEquals(200, response.getStatusCode().value());
+        HttpStatusCode statusCode =  response.getStatusCode();
+        Assert.assertEquals(HttpStatus.OK, statusCode);
+
         List<EstadoModel> estados = response.getBody();
         Assert.assertNotNull(estados);
         Assert.assertTrue(estados.size() > 0);
@@ -52,7 +56,9 @@ public class EstadoControllerTest {
         ResponseEntity<EstadoModel> response = restTemplate.getForEntity(
                 "http://localhost:" + randomServerPort + "/estado/1", EstadoModel.class);
 
-        Assert.assertEquals(200, response.getStatusCode().value());
+        HttpStatusCode statusCode =  response.getStatusCode();
+        Assert.assertEquals(HttpStatus.OK, statusCode);
+
         Assert.assertNotNull(response.getBody());
     }
 
@@ -62,7 +68,9 @@ public class EstadoControllerTest {
         ResponseEntity<EstadoModel> response = restTemplate.getForEntity(
                 "http://localhost:" + randomServerPort + "/estado/99", EstadoModel.class);
 
-        Assert.assertEquals(404, response.getStatusCode().value());
+        HttpStatusCode statusCode =  response.getStatusCode();
+        Assert.assertEquals(HttpStatus.NOT_FOUND, statusCode);
+
         Assert.assertNull(response.getBody());
     }
 
@@ -72,7 +80,9 @@ public class EstadoControllerTest {
         ResponseEntity<EstadoModel> response = restTemplate.getForEntity(
                 "http://localhost:" + randomServerPort + "/estado/nome/Amazonas", EstadoModel.class);
 
-        Assert.assertEquals(200, response.getStatusCode().value());
+        HttpStatusCode statusCode =  response.getStatusCode();
+        Assert.assertEquals(HttpStatus.OK, statusCode);
+
         Assert.assertNotNull(response.getBody());
         Assert.assertEquals("Amazonas", response.getBody().getNome());
     }
@@ -83,7 +93,8 @@ public class EstadoControllerTest {
         ResponseEntity<EstadoModel> response = restTemplate.getForEntity(
                 "http://localhost:" + randomServerPort + "/estado/nome/Alabama", EstadoModel.class);
 
-        Assert.assertEquals(404, response.getStatusCode().value());
+        HttpStatusCode statusCode =  response.getStatusCode();
+        Assert.assertEquals(HttpStatus.NOT_FOUND, statusCode);
         Assert.assertNull(response.getBody());
     }
 
@@ -93,7 +104,9 @@ public class EstadoControllerTest {
         ResponseEntity<EstadoModel> response = restTemplate.getForEntity(
                 "http://localhost:" + randomServerPort + "/estado/sigla/SP", EstadoModel.class);
 
-        Assert.assertEquals(200, response.getStatusCode().value());
+        HttpStatusCode statusCode =  response.getStatusCode();
+        Assert.assertEquals(HttpStatus.OK, statusCode);
+
         Assert.assertNotNull(response.getBody());
         Assert.assertEquals("São Paulo", response.getBody().getNome());
     }
@@ -104,7 +117,8 @@ public class EstadoControllerTest {
         ResponseEntity<EstadoModel> response = restTemplate.getForEntity(
                 "http://localhost:" + randomServerPort + "/estado/sigla/RP", EstadoModel.class);
 
-        Assert.assertEquals(404, response.getStatusCode().value());
+        HttpStatusCode statusCode =  response.getStatusCode();
+        Assert.assertEquals(HttpStatus.NOT_FOUND, statusCode);
         Assert.assertNull(response.getBody());
     }
 

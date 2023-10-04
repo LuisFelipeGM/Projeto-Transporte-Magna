@@ -2,7 +2,7 @@ package br.com.magna.trainees.transporte.controllers;
 
 import br.com.magna.trainees.transporte.models.CidadeModel;
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +11,8 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -38,7 +40,9 @@ public class CidadeControllerTest {
                 new ParameterizedTypeReference<List<CidadeModel>>() {}
         );
 
-        Assert.assertEquals(200, response.getStatusCode().value());
+        HttpStatusCode statusCode =  response.getStatusCode();
+        Assert.assertEquals(HttpStatus.OK, statusCode);
+
         List<CidadeModel> cidades = response.getBody();
         Assert.assertNotNull(cidades);
         Assert.assertTrue(cidades.size() > 0);
@@ -51,7 +55,8 @@ public class CidadeControllerTest {
         ResponseEntity<CidadeModel> response = restTemplate.getForEntity(
                 "http://localhost:" + randomServerPort + "/cidade/1", CidadeModel.class);
 
-        Assert.assertEquals(200, response.getStatusCode().value());
+        HttpStatusCode statusCode =  response.getStatusCode();
+        Assert.assertEquals(HttpStatus.OK, statusCode);
         Assert.assertNotNull(response.getBody());
     }
 
@@ -61,7 +66,8 @@ public class CidadeControllerTest {
         ResponseEntity<CidadeModel> response = restTemplate.getForEntity(
                 "http://localhost:" + randomServerPort + "/cidade/99", CidadeModel.class);
 
-        Assert.assertEquals(404, response.getStatusCode().value());
+        HttpStatusCode statusCode =  response.getStatusCode();
+        Assert.assertEquals(HttpStatus.NOT_FOUND, statusCode);
         Assert.assertNull(response.getBody());
     }
 
@@ -71,7 +77,8 @@ public class CidadeControllerTest {
         ResponseEntity<CidadeModel> response = restTemplate.getForEntity(
                 "http://localhost:" + randomServerPort + "/cidade/nome/Barueri", CidadeModel.class);
 
-        Assert.assertEquals(200, response.getStatusCode().value());
+        HttpStatusCode statusCode =  response.getStatusCode();
+        Assert.assertEquals(HttpStatus.OK, statusCode);
         Assert.assertNotNull(response.getBody());
         Assert.assertEquals("Barueri", response.getBody().getNome());
     }
@@ -82,7 +89,8 @@ public class CidadeControllerTest {
         ResponseEntity<CidadeModel> response = restTemplate.getForEntity(
                 "http://localhost:" + randomServerPort + "/cidade/nome/Salvador", CidadeModel.class);
 
-        Assert.assertEquals(404, response.getStatusCode().value());
+        HttpStatusCode statusCode =  response.getStatusCode();
+        Assert.assertEquals(HttpStatus.NOT_FOUND, statusCode);
         Assert.assertNull(response.getBody());
     }
 

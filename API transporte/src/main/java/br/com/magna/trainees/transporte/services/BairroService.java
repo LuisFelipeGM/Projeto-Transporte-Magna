@@ -10,6 +10,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -73,7 +74,7 @@ public class BairroService extends EntityService<BairroModel> {
 		}
 	}
 
-	public BairroModel findByNome(String nome) {
+	public List<BairroModel> findByNome(String nome) {
 		return ((BairroRepository) repository).findBynomeContainingIgnoreCase(nome);
 	}
 

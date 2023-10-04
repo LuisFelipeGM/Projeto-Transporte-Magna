@@ -16,11 +16,11 @@ public class BairroModel {
     @Column(nullable = false, length = 60)
     private String nome;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "FK_CIDADE", foreignKey = @ForeignKey(name = "FK_CIDADE_BAIRRO"))
     private CidadeModel cidade;
 
-    @OneToMany(mappedBy = "bairro")
+    @OneToMany(mappedBy = "bairro", cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JsonIgnore
     private List<EnderecoModel> endereco;
 

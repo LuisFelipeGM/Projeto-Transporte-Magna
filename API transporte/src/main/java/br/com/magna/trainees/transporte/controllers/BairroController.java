@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @Tag(name = "Bairro", description = "Api para gerenciamento de Bairros no sistema")
@@ -52,10 +53,10 @@ public class BairroController extends GenericController {
             content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = BairroModel.class))))
     @ApiResponse(responseCode = "404", description = "Bairro não encontrado")
     @GetMapping("/nome/{nome}")
-    public ResponseEntity<BairroModel> getByNome(@PathVariable String nome){
-        BairroModel bairro = bairroService.findByNome(nome);
-        return bairro == null ? ResponseEntity.notFound().build()
-                : ResponseEntity.status(HttpStatus.OK).body(bairro);
+    public ResponseEntity<List<BairroModel>> getByNome(@PathVariable String nome){
+        List<BairroModel> bairros = bairroService.findByNome(nome);
+        return bairros == null ? ResponseEntity.notFound().build()
+                : ResponseEntity.status(HttpStatus.OK).body(bairros);
     }
 
 

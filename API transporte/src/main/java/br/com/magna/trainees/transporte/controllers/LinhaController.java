@@ -83,6 +83,9 @@ public class LinhaController extends GenericController {
     @ApiResponse(responseCode = "200", description = "Linha alterada com sucesso")
     @PutMapping("/{id}")
     public ResponseEntity<Object> put(@PathVariable Long id, @Valid @RequestBody LinhaDto linhaDto, BindingResult result){
+    	Optional<LinhaModel> optionalLinha = linhaService.findById(id);
+    	if(optionalLinha.isEmpty())
+    			return ResponseEntity.notFound().build();
         try {
             return result.hasErrors() ? ResponseEntity.unprocessableEntity().body(getErrors(result))
                     : ResponseEntity.status(HttpStatus.CREATED).body(linhaService.putLinha(linhaDto, id));

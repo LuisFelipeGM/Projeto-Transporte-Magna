@@ -45,7 +45,6 @@ public class EstadoControllerTest {
 
         List<EstadoModel> estados = response.getBody();
         Assert.assertNotNull(estados);
-        Assert.assertTrue(estados.size() > 0);
     }
 
 

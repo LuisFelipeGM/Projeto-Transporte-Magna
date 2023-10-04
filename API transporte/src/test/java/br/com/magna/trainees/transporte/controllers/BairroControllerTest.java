@@ -1,11 +1,8 @@
 package br.com.magna.trainees.transporte.controllers;
 
 import br.com.magna.trainees.transporte.dtos.BairroDto;
-import br.com.magna.trainees.transporte.dtos.ErroDto;
 import br.com.magna.trainees.transporte.models.BairroModel;
 import br.com.magna.trainees.transporte.repositories.BairroRepository;
-import br.com.magna.trainees.transporte.services.BairroService;
-import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.Test;
 import org.junit.*;
 import org.junit.jupiter.api.AfterEach;
@@ -21,7 +18,8 @@ import org.springframework.http.*;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.client.HttpClientErrorException;
+
+import com.fasterxml.jackson.databind.JsonNode;
 
 import java.util.List;
 
@@ -49,7 +47,7 @@ public class BairroControllerTest {
 
 	@BeforeEach
 	public void inicializar() {
-		BairroDto bairro = new BairroDto("Jardim Helena", 1l);
+		BairroDto bairro = new BairroDto("Jardim Helena", 1l); 
 
 		response = restTemplate.postForEntity("http://localhost:" + randomServerPort + "/bairro/", bairro,
 				BairroModel.class);
@@ -84,7 +82,7 @@ public class BairroControllerTest {
 		Assert.assertEquals(HttpStatus.UNPROCESSABLE_ENTITY, statusCode);
 
 		String responseBody = response.getBody();
-		Assert.assertNotNull(responseBody);
+		Assert.assertNotNull(responseBody); 
 		Assert.assertTrue(responseBody.contains("NOME : O nome do bairro é obrigatório"));
 	}
 
@@ -213,8 +211,8 @@ public class BairroControllerTest {
 
 		HttpEntity<BairroDto> request = new HttpEntity<>(bairro, headers);
 
-		ResponseEntity<String> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1",
-				HttpMethod.PUT, request, String.class);
+		ResponseEntity<JsonNode> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1",
+				HttpMethod.PUT, request, JsonNode.class);
 
 		HttpStatusCode statusCode = response.getStatusCode();
 		Assert.assertEquals(HttpStatus.UNPROCESSABLE_ENTITY, statusCode);
@@ -230,8 +228,8 @@ public class BairroControllerTest {
 
 		HttpEntity<BairroDto> request = new HttpEntity<>(bairro, headers);
 
-		ResponseEntity<String> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1",
-				HttpMethod.PUT, request, String.class);
+		ResponseEntity<JsonNode> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1",
+				HttpMethod.PUT, request, JsonNode.class);
 
 		HttpStatusCode statusCode = response.getStatusCode();
 		Assert.assertEquals(HttpStatus.UNPROCESSABLE_ENTITY, statusCode);
@@ -247,8 +245,8 @@ public class BairroControllerTest {
 
 		HttpEntity<BairroDto> request = new HttpEntity<>(bairro, headers); 
 		
-		ResponseEntity<String> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1000",
-				HttpMethod.PUT, request, String.class);
+		ResponseEntity<JsonNode> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1000",
+				HttpMethod.PUT, request, JsonNode.class);
 
 		HttpStatusCode statusCode = response.getStatusCode();
 		Assert.assertEquals(HttpStatus.NOT_FOUND, statusCode);
@@ -265,8 +263,8 @@ public class BairroControllerTest {
 
 		HttpEntity<BairroDto> request = new HttpEntity<>(bairro, headers);
 		
-		ResponseEntity<String> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1",
-				HttpMethod.PUT, request, String.class);
+		ResponseEntity<JsonNode> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1",
+				HttpMethod.PUT, request, JsonNode.class);
 
 		HttpStatusCode statusCode = response.getStatusCode();
 		Assert.assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, statusCode);

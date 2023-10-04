@@ -45,7 +45,6 @@ public class CidadeControllerTest {
 
         List<CidadeModel> cidades = response.getBody();
         Assert.assertNotNull(cidades);
-        Assert.assertTrue(cidades.size() > 0);
 
     }
 

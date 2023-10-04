@@ -23,6 +23,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.HttpClientErrorException;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -213,8 +215,8 @@ public class BairroControllerTest {
 
 		HttpEntity<BairroDto> request = new HttpEntity<>(bairro, headers);
 
-		ResponseEntity<String> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1",
-				HttpMethod.PUT, request, String.class);
+		ResponseEntity<JsonNode> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1",
+				HttpMethod.PUT, request, JsonNode.class);
 
 		HttpStatusCode statusCode = response.getStatusCode();
 		Assert.assertEquals(HttpStatus.UNPROCESSABLE_ENTITY, statusCode);
@@ -230,8 +232,8 @@ public class BairroControllerTest {
 
 		HttpEntity<BairroDto> request = new HttpEntity<>(bairro, headers);
 
-		ResponseEntity<String> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1",
-				HttpMethod.PUT, request, String.class);
+		ResponseEntity<JsonNode> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1",
+				HttpMethod.PUT, request, JsonNode.class);
 
 		HttpStatusCode statusCode = response.getStatusCode();
 		Assert.assertEquals(HttpStatus.UNPROCESSABLE_ENTITY, statusCode);
@@ -247,8 +249,8 @@ public class BairroControllerTest {
 
 		HttpEntity<BairroDto> request = new HttpEntity<>(bairro, headers); 
 		
-		ResponseEntity<String> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1000",
-				HttpMethod.PUT, request, String.class);
+		ResponseEntity<JsonNode> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1000",
+				HttpMethod.PUT, request, JsonNode.class);
 
 		HttpStatusCode statusCode = response.getStatusCode();
 		Assert.assertEquals(HttpStatus.NOT_FOUND, statusCode);
@@ -265,8 +267,8 @@ public class BairroControllerTest {
 
 		HttpEntity<BairroDto> request = new HttpEntity<>(bairro, headers);
 		
-		ResponseEntity<String> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1",
-				HttpMethod.PUT, request, String.class);
+		ResponseEntity<JsonNode> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/bairro/1",
+				HttpMethod.PUT, request, JsonNode.class);
 
 		HttpStatusCode statusCode = response.getStatusCode();
 		Assert.assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, statusCode);

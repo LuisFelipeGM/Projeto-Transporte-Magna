@@ -90,9 +90,6 @@ public class CartaoModel {
 		this.dataValidade = dataValidade;
 	}
 
-	public PassageiroModel getPassageiro() {
-		return passageiro;
-	}
 
 	public void setPassageiro(PassageiroModel passageiro) {
 		this.passageiro = passageiro;

@@ -51,23 +51,18 @@ public class BairroService extends EntityService<BairroModel> {
 	public BairroModel putBairro(BairroDto bairroDto, Long id) {
 		try {
 			Optional<BairroModel> bairroOptional = bairroRepository.findById(id);
-			if (bairroOptional.isPresent()) {
-				BairroModel bairro = bairroOptional.get();
-				Optional<CidadeModel> cidadeOptional = cidadeService.findById(bairroDto.idCidade());
+			BairroModel bairro = bairroOptional.get();
+			Optional<CidadeModel> cidadeOptional = cidadeService.findById(bairroDto.idCidade());
 
-				if (cidadeOptional.isPresent()) {
-					CidadeModel cidade = cidadeOptional.get();
-					BeanUtils.copyProperties(bairroDto, bairro);
-					bairro.setCidade(cidade);
+			if (cidadeOptional.isPresent()) {
+				CidadeModel cidade = cidadeOptional.get();
+				BeanUtils.copyProperties(bairroDto, bairro);
+				bairro.setCidade(cidade);
 
-					log.info("Atualizando Bairro de ID " + id);
-					return repository.save(bairro);
-				} else {
-					throw new Exception("Cidade não encontrada");
-				}
-
+				log.info("Atualizando Bairro de ID " + id);
+				return repository.save(bairro);
 			} else {
-				throw new Exception("Bairro não encontrado");
+				throw new Exception("Cidade não encontrada");
 			}
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage());

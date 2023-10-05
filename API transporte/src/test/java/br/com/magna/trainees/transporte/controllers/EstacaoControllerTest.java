@@ -153,6 +153,24 @@ public class EstacaoControllerTest {
 		Assert.assertNotNull(responseBody);
 		Assert.assertTrue(responseBody.contains("NOME : O nome da Estação é obrigatório"));
 	}
+	
+	@Test
+	@DisplayName("Deveria dar erro ao cadastrar uma Estação com valores invalidos")
+	public void testCadastrarUmaEstacaoComDadosInvalidos() {
+		EstacaoDto estacao = new EstacaoDto("", null, null);
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		HttpEntity<EstacaoDto> request = new HttpEntity<>(estacao, headers);
+
+		ResponseEntity<JsonNode> response = restTemplate
+				.postForEntity("http://localhost:" + randomServerPort + "/estacao/", request, JsonNode.class);
+
+		HttpStatusCode statusCode = response.getStatusCode();
+		Assert.assertEquals(HttpStatus.UNPROCESSABLE_ENTITY, statusCode);
+		Assert.assertNotNull(response.getBody());
+	}
 
 	// TESTES GET
 

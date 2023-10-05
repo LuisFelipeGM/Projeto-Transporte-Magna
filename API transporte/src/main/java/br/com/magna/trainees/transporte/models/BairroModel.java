@@ -48,11 +48,4 @@ public class BairroModel {
         this.cidade = cidade;
     }
 
-    public List<EnderecoModel> getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(List<EnderecoModel> endereco) {
-        this.endereco = endereco;
-    }
 }

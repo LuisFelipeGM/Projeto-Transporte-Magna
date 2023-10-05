@@ -82,13 +82,6 @@ public class EstacaoModel {
         this.endereco = endereco;
     }
 
-	public List<ViagemModel> getViagem() {
-		return viagem;
-	}
-
-	public void setViagem(List<ViagemModel> viagem) {
-		this.viagem = viagem;
-	}
 
 	
     

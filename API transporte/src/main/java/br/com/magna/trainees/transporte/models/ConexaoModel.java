@@ -36,9 +36,6 @@ public class ConexaoModel {
         this.linha = linha;
     }
 
-    public EstacaoModel getEstacao() {
-        return estacao;
-    }
 
     public void setEstacao(EstacaoModel estacao) {
         this.estacao = estacao;

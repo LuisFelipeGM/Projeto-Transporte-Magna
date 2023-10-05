@@ -61,9 +61,6 @@ public class EnderecoModel {
         this.complemento = complemento;
     }
 
-    public EstacaoModel getEstacao() {
-        return estacao;
-    }
 
     public void setEstacao(EstacaoModel estacao) {
         this.estacao = estacao;

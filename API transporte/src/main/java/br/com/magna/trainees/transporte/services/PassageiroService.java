@@ -48,17 +48,13 @@ public class PassageiroService extends EntityService<PassageiroModel> {
 	public PassageiroModel putPassageiro(PassageiroDto passageiroDto, Long id){
 			try {
 			Optional<PassageiroModel> passageiroOptional = passageiroRepository.findById(id);
-			if (passageiroOptional.isPresent()) {
 				PassageiroModel pass = passageiroOptional.get();
                 BeanUtils.copyProperties(passageiroDto, pass);
                 if(pass.getDataNascimento() == null)
-    				throw new RuntimeException("A Data de Nascimento é Obrigatória!");
+                	throw new RuntimeException("A Data de Nascimento é Obrigatória!");
                 
                 log.info("Atualizando Passageiro de ID: " + id);
                 return repository.save(pass);
-			} else {
-				throw new RuntimeException("Erro ao atualizar o passageiro.");
-			}
 			} catch (Exception e) {
 				log.error("Erro ao copiar as propriedades do DTO para o modelo de Passageiro: " + e.getMessage());
             	throw new RuntimeException(e.getMessage());

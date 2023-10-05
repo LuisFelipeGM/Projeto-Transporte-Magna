@@ -46,9 +46,6 @@ public class ViagemModel {
 		this.estacao = estacao;
 	}
 
-	public TipoPassagemModel getTipoPassagem() {
-		return tipoPassagem;
-	}
 
 	public void setTipoPassagem(TipoPassagemModel tipoPassagem) {
 		this.tipoPassagem = tipoPassagem;

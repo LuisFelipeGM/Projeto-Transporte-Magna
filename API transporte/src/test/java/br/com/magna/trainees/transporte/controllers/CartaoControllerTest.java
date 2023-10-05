@@ -54,7 +54,6 @@ public class CartaoControllerTest {
 	@BeforeEach
 	public void inicializar() {
 		criarPassageiro();
-		criarCartao();
 	}
 
 	@AfterEach
@@ -162,7 +161,11 @@ public class CartaoControllerTest {
 	@Test
 	@DisplayName("Deveria dar erro ao cadastrar um Cartão já que seu numero já existe no sistema")
 	public void testCadastrarUmCartaoComNumeroUnique() {
-		CartaoDto cartao = new CartaoDto(12345990l, TipoPassageiro.BILHETE_UNICO, 1l);
+		criarCartao();
+		PassageiroDto passageiro = new PassageiroDto("Luís Felipe", "13256754314", LocalDate.of(2003, 9, 01));
+		restTemplate.postForEntity("http://localhost:" + randomServerPort + "/passageiro/", passageiro,
+				PassageiroModel.class);
+		CartaoDto cartao = new CartaoDto(12345990l, TipoPassageiro.BILHETE_UNICO, 2l);
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
@@ -198,12 +201,36 @@ public class CartaoControllerTest {
 		JsonNode responseBody = response.getBody();
 		Assert.assertNotNull(responseBody);
 	}
+	
+	@Test
+	@DisplayName("Deveria dar erro ao cadastrar um Cartão se o passageiro já tiver um cartão")
+	public void testCadastrarUmCartaoComIdUsuarioJaTendoUmCartao() {
+		criarCartao();
+		CartaoDto cartao = new CartaoDto(12345990l, TipoPassageiro.BILHETE_UNICO, 1l);
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		HttpEntity<CartaoDto> request = new HttpEntity<>(cartao, headers);
+
+		ResponseEntity<JsonNode> response = restTemplate
+				.postForEntity("http://localhost:" + randomServerPort + "/cartao/", request, JsonNode.class);
+
+		HttpStatusCode statusCode = response.getStatusCode();
+		Assert.assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, statusCode);
+
+		JsonNode responseBody = response.getBody();
+		Assert.assertNotNull(responseBody);
+	}
+	
+	
 
 	// TESTES GET
 
 	@Test
 	@DisplayName("Deveria listar todos os cartões")
 	public void testListarTodosOsCartoesDoSistema() {
+		criarCartao();
 		ResponseEntity<List<CartaoModel>> response = restTemplate.exchange(
 				"http://localhost:" + randomServerPort + "/cartao/", HttpMethod.GET, null,
 				new ParameterizedTypeReference<List<CartaoModel>>() {
@@ -217,6 +244,7 @@ public class CartaoControllerTest {
 	@Test
 	@DisplayName("Deveria listar o cartão de id valido")
 	public void testListarUmCartaoComIdValido() {
+		criarCartao();
 		ResponseEntity<CartaoModel> response = restTemplate
 				.getForEntity("http://localhost:" + randomServerPort + "/cartao/1", CartaoModel.class);
 
@@ -228,6 +256,7 @@ public class CartaoControllerTest {
 	@Test
 	@DisplayName("Deveria dar not found pois não achou o cartão de id invalido")
 	public void testListarUmCartaoComIdInvalido() {
+		criarCartao();
 		ResponseEntity<CartaoModel> response = restTemplate
 				.getForEntity("http://localhost:" + randomServerPort + "/cartao/100", CartaoModel.class);
 
@@ -241,6 +270,7 @@ public class CartaoControllerTest {
 	@Test
 	@DisplayName("Deveria retornar o cartao de ID 1 alterado com sucesso")
 	public void testAtualizarUmCartaoComIdValido() {
+		criarCartao();
 		CartaoDto cartao = new CartaoDto(109954321l, TipoPassageiro.PASSE_LIVRE, 1l);
 
 		HttpHeaders headers = new HttpHeaders();
@@ -262,6 +292,7 @@ public class CartaoControllerTest {
 	@Test
 	@DisplayName("Deveria dar erro ao atualizar um cartao já que seu numero não pode ser nulo")
 	public void testAtualizarUmCartaoComNumeroNulo() {
+		criarCartao();
 		CartaoDto cartao = new CartaoDto(null, TipoPassageiro.PASSE_LIVRE, 1l);
 
 		HttpHeaders headers = new HttpHeaders();
@@ -279,6 +310,7 @@ public class CartaoControllerTest {
 	@Test
 	@DisplayName("Deveria dar erro ao atualizar um cartao já que seu tipo passagem não pode ser nulo")
 	public void testAtualizarUmCartaoComTipoPassageiro() {
+		criarCartao();
 		CartaoDto cartao = new CartaoDto(109954321l, null, 1l);
 
 		HttpHeaders headers = new HttpHeaders();
@@ -296,6 +328,7 @@ public class CartaoControllerTest {
 	@Test
 	@DisplayName("Deveria dar erro ao atualizar um cartao já que seu id do usuario não pode ser nulo")
 	public void testAtualizarUmCartaoComIdPassageiroNulo() {
+		criarCartao();
 		CartaoDto cartao = new CartaoDto(109954321l, TipoPassageiro.PASSE_LIVRE, null);
 
 		HttpHeaders headers = new HttpHeaders();
@@ -313,6 +346,7 @@ public class CartaoControllerTest {
 	@Test
 	@DisplayName("Deveria dar erro ao atualizar um cartão já que o Id do passageiro é inválido")
 	public void testAtualizarUmCartaoComIdPassageiroInvalido() {
+		criarCartao();
 		CartaoDto cartao = new CartaoDto(109954321l, TipoPassageiro.PASSE_LIVRE, 100l);
 
 		HttpHeaders headers = new HttpHeaders();
@@ -330,6 +364,7 @@ public class CartaoControllerTest {
 	@Test
 	@DisplayName("Deveria dar erro ao atualizar um cartão que seu numero já esteja no sistema")
 	public void testAtualizarUmCartaoComNumeroUnique() {
+		criarCartao();
 		PassageiroDto passageiro = new PassageiroDto("Luís Felipe", "13245678901", LocalDate.of(2003, 9, 01));
 		restTemplate.postForEntity("http://localhost:" + randomServerPort + "/passageiro/", passageiro,
 				PassageiroModel.class);
@@ -352,11 +387,33 @@ public class CartaoControllerTest {
 		Assert.assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, statusCode);
 	}
 	
+	@Test
+	@DisplayName("Deveria dar erro ao atualizar um cartão que o Id é inválido")
+	public void testAtualizarUmCartaoComIdInvalido() {
+		criarCartao();
+		CartaoDto cartao = new CartaoDto(109954321l, TipoPassageiro.PASSE_LIVRE, 1l);
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		HttpEntity<CartaoDto> request = new HttpEntity<>(cartao, headers);
+
+		ResponseEntity<CartaoModel> response = restTemplate.exchange(
+				"http://localhost:" + randomServerPort + "/cartao/100", HttpMethod.PUT, request,
+				CartaoModel.class);
+		
+		HttpStatusCode statusCode = response.getStatusCode();
+		Assert.assertEquals(HttpStatus.NOT_FOUND, statusCode);
+		Assert.assertNull(response.getBody());
+		
+	}
+	
 	// TESTES DELETE
 	
 	@Test
 	@DisplayName("Deveria retornar no Content já que o cartão foi excluido com sucesso")
 	public void testDeletaUmCartaoComIdValido() {
+		criarCartao();
 		ResponseEntity<CartaoModel> response = restTemplate.exchange(
 				"http://localhost:" + randomServerPort + "/cartao/1", HttpMethod.DELETE, null,
 				CartaoModel.class);
@@ -369,6 +426,7 @@ public class CartaoControllerTest {
 	@Test
 	@DisplayName("Deveria retornar not found já que o cartão não foi encontrado")
 	public void testDeletaUmCartaoComIdInvalido() {
+		criarCartao();
 		ResponseEntity<CartaoModel> response = restTemplate.exchange(
 				"http://localhost:" + randomServerPort + "/cartao/100", HttpMethod.DELETE, null,
 				CartaoModel.class);

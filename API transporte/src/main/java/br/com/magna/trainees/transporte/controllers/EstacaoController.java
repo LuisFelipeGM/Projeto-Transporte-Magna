@@ -23,70 +23,54 @@ import java.util.Optional;
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class EstacaoController extends GenericController {
 
-    final EstacaoService estacaoService;
+	final EstacaoService estacaoService;
 
-    public EstacaoController(EstacaoService estacaoService) {
-        this.estacaoService = estacaoService;
-    }
+	public EstacaoController(EstacaoService estacaoService) {
+		this.estacaoService = estacaoService;
+	}
 
-    @Operation(summary = "Lista todas as estações", description = "Lista todas as estações do sistema")
-    @ApiResponse(responseCode = "200", description = "Estações encontradas com sucesso",
-            content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = EstacaoModel.class))))
-    @GetMapping("/")
-    public ResponseEntity<Object> get(){
-        return ResponseEntity.status(HttpStatus.OK).body(estacaoService.getAll());
-    }
+	@Operation(summary = "Lista todas as estações", description = "Lista todas as estações do sistema")
+	@ApiResponse(responseCode = "200", description = "Estações encontradas com sucesso", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = EstacaoModel.class))))
+	@GetMapping("/")
+	public ResponseEntity<Object> get() {
+		return ResponseEntity.status(HttpStatus.OK).body(estacaoService.getAll());
+	}
 
-    @Operation(summary = "Recupera uma estação por ID", description = "Recupera os dados de uma estação a partir do seu ID")
-    @ApiResponse(responseCode = "200", description = "Estação encontrada com sucesso",
-            content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = EstacaoModel.class))))
-    @ApiResponse(responseCode = "404", description = "Estação não encontrada")
-    @GetMapping("/{id}")
-    public ResponseEntity<EstacaoModel> getById(@PathVariable Long id){
-        Optional<EstacaoModel> optional = estacaoService.findById(id);
-        return optional.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
-    }
+	@Operation(summary = "Recupera uma estação por ID", description = "Recupera os dados de uma estação a partir do seu ID")
+	@ApiResponse(responseCode = "200", description = "Estação encontrada com sucesso", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = EstacaoModel.class))))
+	@ApiResponse(responseCode = "404", description = "Estação não encontrada")
+	@GetMapping("/{id}")
+	public ResponseEntity<EstacaoModel> getById(@PathVariable Long id) {
+		Optional<EstacaoModel> optional = estacaoService.findById(id);
+		return optional.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+	}
 
-    @Operation(summary = "Salva a estação", description = "Salva a estação")
-    @ApiResponse(responseCode = "201", description = "Linha salva com sucesso",
-            content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = EstacaoModel.class))))
-    @PostMapping("/")
-    public ResponseEntity<Object> save(@Valid @RequestBody EstacaoDto estacaoDto, BindingResult result){
-        try {
-            return  result.hasErrors() ? ResponseEntity.unprocessableEntity().body(getErrors(result))
-                    : ResponseEntity.status(HttpStatus.CREATED).body(estacaoService.adicionaEstacao(estacaoDto));
-        } catch (Exception e) {
-            return handleErrors(e);
-        }
-    }
+	@Operation(summary = "Salva a estação", description = "Salva a estação")
+	@ApiResponse(responseCode = "201", description = "Linha salva com sucesso", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = EstacaoModel.class))))
+	@PostMapping("/")
+	public ResponseEntity<Object> save(@Valid @RequestBody EstacaoDto estacaoDto, BindingResult result) {
+		return result.hasErrors() ? ResponseEntity.unprocessableEntity().body(getErrors(result))
+				: ResponseEntity.status(HttpStatus.CREATED).body(estacaoService.adicionaEstacao(estacaoDto));
+	}
 
-    @Operation(summary = "Exclui uma estação pelo Id" , description = "Exclui uma estação a partir do seu ID")
-    @ApiResponse(responseCode = "204", description = "Estação excluida com sucesso")
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Object> delete(@PathVariable Long id){
-        Optional<EstacaoModel> optionalEstacao = estacaoService.findById(id);
-        return optionalEstacao
-                .map(estacaoModel -> {
-                    try {
-                        estacaoService.deleteById(id);
-                        return ResponseEntity.noContent().build();
-                    } catch (Exception e) {
-                        return handleErrors(e);
-                    }
-                })
-                .orElse(ResponseEntity.notFound().build());
-    }
+	@Operation(summary = "Exclui uma estação pelo Id", description = "Exclui uma estação a partir do seu ID")
+	@ApiResponse(responseCode = "204", description = "Estação excluida com sucesso")
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Object> delete(@PathVariable Long id) {
+		Optional<EstacaoModel> optionalEstacao = estacaoService.findById(id);
+		return optionalEstacao.map(estacaoModel -> {
+			estacaoService.deleteById(id);
+			return ResponseEntity.noContent().build();
+		}).orElse(ResponseEntity.notFound().build());
+	}
 
-    @Operation(summary = "Altera uma estação pelo Id" , description = "Altera uma estação a partir do seu ID")
-    @ApiResponse(responseCode = "200", description = "Estação alterada com sucesso")
-    @PutMapping("/{id}")
-    public ResponseEntity<Object> put(@PathVariable Long id, @Valid @RequestBody EstacaoDto estacaoDto, BindingResult result){
-        try {
-            return result.hasErrors() ? ResponseEntity.unprocessableEntity().body(getErrors(result))
-                    : ResponseEntity.status(HttpStatus.CREATED).body(estacaoService.putEstacao(estacaoDto, id));
-        } catch (Exception e) {
-            return handleErrors(e);
-        }
-    }
+	@Operation(summary = "Altera uma estação pelo Id", description = "Altera uma estação a partir do seu ID")
+	@ApiResponse(responseCode = "200", description = "Estação alterada com sucesso")
+	@PutMapping("/{id}")
+	public ResponseEntity<Object> put(@PathVariable Long id, @Valid @RequestBody EstacaoDto estacaoDto,
+			BindingResult result) {
+		return result.hasErrors() ? ResponseEntity.unprocessableEntity().body(getErrors(result))
+				: ResponseEntity.status(HttpStatus.CREATED).body(estacaoService.putEstacao(estacaoDto, id));
+	}
 
 }

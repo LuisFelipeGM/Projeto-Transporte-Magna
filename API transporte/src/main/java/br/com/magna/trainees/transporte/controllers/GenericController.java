@@ -14,23 +14,17 @@ import java.util.stream.Collectors;
 
 public class GenericController {
 
-    List<String> getErrors(@NotNull BindingResult result) {
-        return result.getAllErrors()
-                .stream()
-                .map(error -> {
-                    if (error instanceof FieldError) {
-                        FieldError fieldError = (FieldError) error;
-                        return fieldError.getField().toUpperCase(Locale.ROOT) + " : " + error.getDefaultMessage();
-                    } else {
-                        return error.getDefaultMessage();
-                    }
-                })
-                .collect(Collectors.toList());
-    }
+	List<String> getErrors(@NotNull BindingResult result) {
+		return result.getAllErrors().stream().map(error -> {
+			FieldError fieldError = (FieldError) error;
+			return fieldError.getField().toUpperCase(Locale.ROOT) + " : " + error.getDefaultMessage();
 
-    ResponseEntity<Object> handleErrors(@NotNull Exception e) {
-        ErroDto erroDTO = new ErroDto("Ocorreu um erro: ", e.getMessage());
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(erroDTO);
-    }
+		}).collect(Collectors.toList());
+	}
+
+	ResponseEntity<Object> handleErrors(@NotNull Exception e) {
+		ErroDto erroDTO = new ErroDto("Ocorreu um erro: ", e.getMessage());
+		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(erroDTO);
+	}
 
 }

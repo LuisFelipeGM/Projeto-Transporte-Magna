@@ -32,76 +32,67 @@ import jakarta.validation.Valid;
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class PassageiroController extends GenericController {
 
-    final PassageiroService passageiroService;
+	final PassageiroService passageiroService;
 
-    public PassageiroController(PassageiroService passageiroService){
-        this.passageiroService = passageiroService;
-    }
-    
-    @Operation(summary = "Lista todos os passageiros", description = "Lista todos os passageiros do sistema")
-    @ApiResponse(responseCode = "200", description = "Passageiros encontrados com sucesso",
-                    content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = PassageiroModel.class))))
-    @GetMapping("/")
-    public ResponseEntity<Object> get(){
-        return ResponseEntity.status(HttpStatus.OK).body(passageiroService.getAll());
-    }
+	public PassageiroController(PassageiroService passageiroService) {
+		this.passageiroService = passageiroService;
+	}
 
-    @Operation(summary = "Recupera um passageiro por ID", description = "Recupera os dados de um passageiro a partir do seu ID")
-    @ApiResponse(responseCode = "200", description = "Passageiro encontrado com sucesso",
-            content = @Content(mediaType = "application/json", schema = @Schema(implementation = PassageiroModel.class)))
-    @ApiResponse(responseCode = "404", description = "Passageiro não encontrado")
-    @GetMapping("/{id}")
-    public ResponseEntity<PassageiroModel> geyById(@PathVariable Long id){
-        Optional<PassageiroModel> optional = passageiroService.findById(id);
-        return optional.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
-    }
+	@Operation(summary = "Lista todos os passageiros", description = "Lista todos os passageiros do sistema")
+	@ApiResponse(responseCode = "200", description = "Passageiros encontrados com sucesso", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = PassageiroModel.class))))
+	@GetMapping("/")
+	public ResponseEntity<Object> get() {
+		return ResponseEntity.status(HttpStatus.OK).body(passageiroService.getAll());
+	}
 
+	@Operation(summary = "Recupera um passageiro por ID", description = "Recupera os dados de um passageiro a partir do seu ID")
+	@ApiResponse(responseCode = "200", description = "Passageiro encontrado com sucesso", content = @Content(mediaType = "application/json", schema = @Schema(implementation = PassageiroModel.class)))
+	@ApiResponse(responseCode = "404", description = "Passageiro não encontrado")
+	@GetMapping("/{id}")
+	public ResponseEntity<PassageiroModel> geyById(@PathVariable Long id) {
+		Optional<PassageiroModel> optional = passageiroService.findById(id);
+		return optional.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+	}
 
-    @Operation(summary = "Salva o passageiro", description = "Salva o passageiro")
-    @ApiResponse(responseCode = "201", description = "Passageiro salvo com sucesso",
-            content = @Content(mediaType = "application/json", schema = @Schema(implementation = PassageiroModel.class)))
-    @PostMapping("/")
-    public ResponseEntity<Object> save(@Valid @RequestBody PassageiroDto passageiroDto, BindingResult result){
-        try {
-            return result.hasErrors() ? ResponseEntity.unprocessableEntity().body(getErrors(result))
-                    : ResponseEntity.status(HttpStatus.CREATED).body(passageiroService.adicionaPassageiro(passageiroDto));
-        } catch (Exception e) {
-            return handleErrors(e);
-        }
-    }
+	@Operation(summary = "Salva o passageiro", description = "Salva o passageiro")
+	@ApiResponse(responseCode = "201", description = "Passageiro salvo com sucesso", content = @Content(mediaType = "application/json", schema = @Schema(implementation = PassageiroModel.class)))
+	@PostMapping("/")
+	public ResponseEntity<Object> save(@Valid @RequestBody PassageiroDto passageiroDto, BindingResult result) {
+		try {
+			return result.hasErrors() ? ResponseEntity.unprocessableEntity().body(getErrors(result))
+					: ResponseEntity.status(HttpStatus.CREATED)
+							.body(passageiroService.adicionaPassageiro(passageiroDto));
+		} catch (Exception e) {
+			return handleErrors(e);
+		}
+	}
 
-    @Operation(summary = "Exclui um passageiro pelo Id" , description = "Exclui um passageiro a partir do seu ID")
-    @ApiResponse(responseCode = "204", description = "Passageiro excluido com sucesso")
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Object> delete(@PathVariable Long id){
-        Optional<PassageiroModel> optionalPassageiro = passageiroService.findById(id);
-        return optionalPassageiro
-                .map(passageiro -> {
-                    try {
-                        passageiroService.deleteById(id);
-                        return ResponseEntity.noContent().build();
-                    } catch (Exception e) {
-                        return handleErrors(e);
-                    }
-                })
-                .orElse(ResponseEntity.notFound().build());
-    }
+	@Operation(summary = "Exclui um passageiro pelo Id", description = "Exclui um passageiro a partir do seu ID")
+	@ApiResponse(responseCode = "204", description = "Passageiro excluido com sucesso")
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Object> delete(@PathVariable Long id) {
+		Optional<PassageiroModel> optionalPassageiro = passageiroService.findById(id);
+		return optionalPassageiro.map(passageiro -> {
+			passageiroService.deleteById(id);
+			return ResponseEntity.noContent().build();
+		}).orElse(ResponseEntity.notFound().build());
+	}
 
+	@Operation(summary = "Altera um passageiro pelo Id", description = "Altera um passageiro a partir do seu ID")
+	@ApiResponse(responseCode = "200", description = "Passageiro alterado com sucesso")
+	@PutMapping("/{id}")
+	public ResponseEntity<Object> put(@PathVariable Long id, @Valid @RequestBody PassageiroDto passageiroDto,
+			BindingResult result) {
+		Optional<PassageiroModel> optionalPassageiro = passageiroService.findById(id);
+		if (optionalPassageiro.isEmpty())
+			return ResponseEntity.notFound().build();
+		try {
+			return result.hasErrors() ? ResponseEntity.unprocessableEntity().body(getErrors(result))
+					: ResponseEntity.status(HttpStatus.CREATED)
+							.body(passageiroService.putPassageiro(passageiroDto, id));
+		} catch (Exception e) {
+			return handleErrors(e);
+		}
+	}
 
-    @Operation(summary = "Altera um passageiro pelo Id" , description = "Altera um passageiro a partir do seu ID")
-    @ApiResponse(responseCode = "200", description = "Passageiro alterado com sucesso")
-    @PutMapping("/{id}")
-    public ResponseEntity<Object> put(@PathVariable Long id, @Valid @RequestBody PassageiroDto passageiroDto, BindingResult result){
-        Optional<PassageiroModel> optionalPassageiro = passageiroService.findById(id);
-        if (optionalPassageiro.isEmpty())
-                return ResponseEntity.notFound().build();
-        try {
-            return result.hasErrors() ? ResponseEntity.unprocessableEntity().body(getErrors(result))
-                    : ResponseEntity.status(HttpStatus.CREATED).body(passageiroService.putPassageiro(passageiroDto, id));
-        } catch (Exception e) {
-            return handleErrors(e);
-        }
-    }
-
-    
 }

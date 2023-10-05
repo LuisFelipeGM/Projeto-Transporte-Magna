@@ -29,6 +29,8 @@ public class PassageiroService extends EntityService<PassageiroModel> {
 		try {
 			PassageiroModel passageiro = new PassageiroModel();
 			BeanUtils.copyProperties(passageiroDto, passageiro);
+			if(passageiro.getDataNascimento() == null)
+				throw new RuntimeException("A Data de Nascimento é Obrigatória!");
 
 			log.info("Cadastrando novo Passageiro");
 
@@ -49,7 +51,9 @@ public class PassageiroService extends EntityService<PassageiroModel> {
 			if (passageiroOptional.isPresent()) {
 				PassageiroModel pass = passageiroOptional.get();
                 BeanUtils.copyProperties(passageiroDto, pass);
-
+                if(pass.getDataNascimento() == null)
+    				throw new RuntimeException("A Data de Nascimento é Obrigatória!");
+                
                 log.info("Atualizando Passageiro de ID: " + id);
                 return repository.save(pass);
 			} else {

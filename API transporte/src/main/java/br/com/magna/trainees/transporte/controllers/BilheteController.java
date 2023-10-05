@@ -85,6 +85,9 @@ public class BilheteController extends GenericController{
 	@ApiResponse(responseCode = "200", description = "Bilhete usado com sucesso")
 	@PutMapping("/{id}")
 	public ResponseEntity<Object> utilizarBilhete(@PathVariable Long id){
+		Optional<BilheteModel> optionalBilhete = bilheteService.findById(id);
+		if (optionalBilhete.isEmpty())
+			return ResponseEntity.notFound().build();
 		try {
 			BilheteModel bilhete = new BilheteModel();
 			bilhete.setId(id);

@@ -34,6 +34,10 @@ public class CartaoService extends EntityService<CartaoModel> {
 			Optional<PassageiroModel> passageiroOptional = passageiroService.findById(cartaoDto.idPassageiro());
 			if (passageiroOptional.isPresent()) {
 				PassageiroModel passageiro = passageiroOptional.get();
+				
+				if (passageiro.getCartao() != null) 
+	                throw new RuntimeException("O passageiro já possui um cartão. Não é permitido ter mais de um cartão.");
+				
 				CartaoModel cartao = new CartaoModel();
 				BeanUtils.copyProperties(cartaoDto, cartao);
 				cartao.setPassageiro(passageiro);

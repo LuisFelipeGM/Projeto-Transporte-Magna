@@ -180,6 +180,20 @@ public class BairroControllerTest {
 		Assert.assertNotNull(response.getBody());
 
 	}
+	
+	@Test
+	@DisplayName("Deveria dar not found pois não achou nenhum bairro a partir do nome")
+	public void testListarBairrosAPartirDoSeuNomeInvalido() {
+		ResponseEntity<List<BairroModel>> response = restTemplate.exchange(
+				"http://localhost:" + randomServerPort + "/bairro/nome/Lima", HttpMethod.GET, null,
+				new ParameterizedTypeReference<List<BairroModel>>() {
+				});
+
+		HttpStatusCode statusCode = response.getStatusCode();
+		Assert.assertEquals(HttpStatus.NOT_FOUND, statusCode);
+		Assert.assertNull(response.getBody());
+
+	}
 
 	// TESTES PUT
 

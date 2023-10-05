@@ -129,8 +129,8 @@ public class LinhaControllerTest {
 
 		HttpEntity<LinhaDto> request = new HttpEntity<>(linha, headers);
 
-		ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:" + randomServerPort + "/linha/",
-				request, String.class);
+		ResponseEntity<JsonNode> response = restTemplate.postForEntity("http://localhost:" + randomServerPort + "/linha/",
+				request, JsonNode.class);
 
 		HttpStatusCode statusCode = response.getStatusCode();
 		Assert.assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, statusCode);
@@ -245,6 +245,25 @@ public class LinhaControllerTest {
 
 		HttpStatusCode statusCode = response.getStatusCode();
 		Assert.assertEquals(HttpStatus.NOT_FOUND, statusCode);
+	}
+	
+	@Test
+	@DisplayName("Deveria dar erro ao atualizar uma linha já que o numero da Linha é duplicado")
+	public void testAtualizarUmaLinhaComIdUnique() {
+		LinhaDto linha = new LinhaDto("Amarela", 2);
+		restTemplate.postForEntity("http://localhost:" + randomServerPort + "/linha/", linha, LinhaModel.class);
+		LinhaDto linhaAtualizada = new LinhaDto("Verde", 2);
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		HttpEntity<LinhaDto> request = new HttpEntity<>(linhaAtualizada, headers);
+
+		ResponseEntity<JsonNode> response = restTemplate.exchange("http://localhost:" + randomServerPort + "/linha/1",
+				HttpMethod.PUT, request, JsonNode.class);
+
+		HttpStatusCode statusCode = response.getStatusCode();
+		Assert.assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, statusCode);
 	}
 
 	// TESTES DELETE

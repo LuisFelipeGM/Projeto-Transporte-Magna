@@ -16,75 +16,59 @@ import java.util.Objects;
 import java.util.Optional;
 
 public abstract class EntityService<T> implements IEntityService<T> {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(EntityService.class);
 
 	public Class<T> type;
 
-    final JpaRepository<T,Long> repository;
-    
-    @SuppressWarnings("unchecked")
-    EntityService(JpaRepository<T, Long> repository) {
-        Type genericSuperclass = getClass().getGenericSuperclass();
-        ParameterizedType parameterizedType = (ParameterizedType) genericSuperclass;
-        Type actualTypeArgument = parameterizedType.getActualTypeArguments()[0];
-        type = (Class<T>) actualTypeArgument;
+	final JpaRepository<T, Long> repository;
 
-        log.info("Criando o service para a classe {}", type.getSimpleName());
+	@SuppressWarnings("unchecked")
+	EntityService(JpaRepository<T, Long> repository) {
+		Type genericSuperclass = getClass().getGenericSuperclass();
+		ParameterizedType parameterizedType = (ParameterizedType) genericSuperclass;
+		Type actualTypeArgument = parameterizedType.getActualTypeArguments()[0];
+		type = (Class<T>) actualTypeArgument;
 
-        this.repository = Objects.requireNonNull(repository, "repository não pode ser nulo.");
-    }
-    
-    
-    @Override
-    @Transactional
-    public List<T> getAll() {
-        log.info("Buscando todos os registros da classe {}", type.getSimpleName());
-        List<T> result = repository.findAll();
-        log.info("Encontrados {} registros da classe {}", result.size(), type.getSimpleName());
-        return result;
+		log.info("Criando o service para a classe {}", type.getSimpleName());
 
-    }
+		this.repository = Objects.requireNonNull(repository, "repository não pode ser nulo.");
+	}
 
-    @Override
-    @Transactional
-    public T save(T object){
-        log.info("Salvando objeto da classe {}", type.getSimpleName());
-        return repository.save(object);
-    }
+	@Override
+	@Transactional
+	public List<T> getAll() {
+		log.info("Buscando todos os registros da classe {}", type.getSimpleName());
+		List<T> result = repository.findAll();
+		log.info("Encontrados {} registros da classe {}", result.size(), type.getSimpleName());
+		return result;
 
-    @Transactional
-    public void deleteById(@NotNull Long id) {
-        log.info("Iniciando a exclusão do objeto da classe " + type + " com o ID: " + id);
+	}
 
-        Objects.requireNonNull(id, "id não pode ser nulo.");
+	@Transactional
+	public void deleteById(@NotNull Long id) {
+		log.info("Iniciando a exclusão do objeto da classe " + type + " com o ID: " + id);
 
-        try {
-            repository.deleteById(id);
-            log.info("Exclusão do objeto da classe " + type.getSimpleName() + " com o ID: " + id + " realizada com sucesso.");
-        } catch (Exception e) {
-            log.error("Erro ao excluir o objeto da classe " + type.getSimpleName() + " com o ID: " + id, e);
-        }
-    }
+		Objects.requireNonNull(id, "id não pode ser nulo.");
 
-    @Transactional
-    public Optional<T> findById(@NotNull Long id) {
-        log.info("Iniciando a pesquisa do objeto da classe " + type.getSimpleName() + " com o ID: " + id);
+		repository.deleteById(id);
+		log.info("Exclusão do objeto da classe " + type.getSimpleName() + " com o ID: " + id
+				+ " realizada com sucesso.");
+	}
 
-        Objects.requireNonNull(id, "id não pode ser nulo.");
+	@Transactional
+	public Optional<T> findById(@NotNull Long id) {
+		log.info("Iniciando a pesquisa do objeto da classe " + type.getSimpleName() + " com o ID: " + id);
 
-        try {
-            Optional<T> result = repository.findById(id);
-            if (result.isPresent()) {
-                log.info("Objeto da classe " + type + " com o ID: " + id + " encontrado.");
-            } else {
-                log.info("Objeto da classe " + type + " com o ID: " + id + " não encontrado.");
-            }
-            return result;
-        } catch (Exception e) {
-            log.error("Erro ao procurar o objeto da classe " + type + " com o ID: " + id, e);
-            return Optional.empty();
-        }
-    }
-	
+		Objects.requireNonNull(id, "id não pode ser nulo.");
+
+		Optional<T> result = repository.findById(id);
+		if (result.isPresent()) {
+			log.info("Objeto da classe " + type + " com o ID: " + id + " encontrado.");
+		} else {
+			log.info("Objeto da classe " + type + " com o ID: " + id + " não encontrado.");
+		}
+		return result;
+	}
+
 }

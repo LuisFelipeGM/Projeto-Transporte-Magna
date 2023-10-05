@@ -191,7 +191,7 @@ public class ViagemControllerTest {
 	
 	@Test
 	@DisplayName("Deveria dar erro ao cadastrar uma viagem já que o Id da estação não pode ser nula")
-	public void testCadastrarUmCartaoComNumeroNulo() {
+	public void testCadastrarUmaViagemComEstacaoNula() {
 		ViagemDto viagem = new ViagemDto(1l, null, null);
 
 		HttpHeaders headers = new HttpHeaders();
@@ -210,6 +210,71 @@ public class ViagemControllerTest {
 		Assert.assertTrue(responseBody.contains("IDESTACAO : O Id da Estação é obrigatório"));
 
 	}
+	
+	@Test
+	@DisplayName("Deveria dar erro ao cadastrar uma viagem já que o Id da estação é invalido")
+	public void testCadastrarUmaViagemComEstacaoInvalida() {
+		ViagemDto viagem = new ViagemDto(1l, null, 10l);
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		HttpEntity<ViagemDto> request = new HttpEntity<>(viagem, headers);
+
+		ResponseEntity<JsonNode> response = restTemplate
+				.postForEntity("http://localhost:" + randomServerPort + "/viagem/", request, JsonNode.class);
+
+		HttpStatusCode statusCode = response.getStatusCode();
+		Assert.assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, statusCode);
+
+		JsonNode responseBody = response.getBody();
+		Assert.assertNotNull(responseBody);
+
+	}
+	
+	@Test
+	@DisplayName("Deveria dar erro ao cadastrar uma viagem já que o Id do bilhete é invalido")
+	public void testCadastrarUmaViagemComBilheteInvalido() {
+		ViagemDto viagem = new ViagemDto(10l, null, 1l);
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		HttpEntity<ViagemDto> request = new HttpEntity<>(viagem, headers);
+
+		ResponseEntity<JsonNode> response = restTemplate
+				.postForEntity("http://localhost:" + randomServerPort + "/viagem/", request, JsonNode.class);
+
+		HttpStatusCode statusCode = response.getStatusCode();
+		Assert.assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, statusCode);
+
+		JsonNode responseBody = response.getBody();
+		Assert.assertNotNull(responseBody);
+
+	}
+	
+	@Test
+	@DisplayName("Deveria dar erro ao cadastrar uma viagem já que o Id do cartão é invalido")
+	public void testCadastrarUmaViagemComCartaoInvalido() {
+		ViagemDto viagem = new ViagemDto(null, 10l, 1l);
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		HttpEntity<ViagemDto> request = new HttpEntity<>(viagem, headers);
+
+		ResponseEntity<JsonNode> response = restTemplate
+				.postForEntity("http://localhost:" + randomServerPort + "/viagem/", request, JsonNode.class);
+
+		HttpStatusCode statusCode = response.getStatusCode();
+		Assert.assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, statusCode);
+
+		JsonNode responseBody = response.getBody();
+		Assert.assertNotNull(responseBody);
+
+	}
+	
+	
 	
 	// TESTES GET
 	

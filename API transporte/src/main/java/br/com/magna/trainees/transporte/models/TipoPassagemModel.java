@@ -43,17 +43,11 @@ public class TipoPassagemModel {
 		this.id = id;
 	}
 
-	public CartaoModel getCartao() {
-		return cartao;
-	}
 
 	public void setCartao(CartaoModel cartao) {
 		this.cartao = cartao;
 	}
 
-	public BilheteModel getBilhete() {
-		return bilhete;
-	}
 
 	public void setBilhete(BilheteModel bilhete) {
 		this.bilhete = bilhete;

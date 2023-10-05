@@ -63,30 +63,26 @@ public class EnderecoService extends EntityService<EnderecoModel> {
 	public EnderecoModel putEndereco(EnderecoDto enderecoDto, Long id) {
 		try {
 			Optional<EnderecoModel> enderecoOptional = enderecoRepository.findById(id);
-			if (enderecoOptional.isPresent()) {
-				EnderecoModel endereco = enderecoOptional.get();
-				Optional<EstacaoModel> estacaoOptional = estacaoService.findById(enderecoDto.idEstacao());
+			EnderecoModel endereco = enderecoOptional.get();
+			Optional<EstacaoModel> estacaoOptional = estacaoService.findById(enderecoDto.idEstacao());
 
-				if (estacaoOptional.isPresent()) {
-					EstacaoModel estacao = estacaoOptional.get();
-					Optional<BairroModel> bairroOptional = bairroService.findById(enderecoDto.idBairro());
+			if (estacaoOptional.isPresent()) {
+				EstacaoModel estacao = estacaoOptional.get();
+				Optional<BairroModel> bairroOptional = bairroService.findById(enderecoDto.idBairro());
 
-					if (bairroOptional.isPresent()) {
-						BairroModel bairro = bairroOptional.get();
-						BeanUtils.copyProperties(enderecoDto, endereco);
-						endereco.setBairro(bairro);
-						endereco.setEstacao(estacao);
+				if (bairroOptional.isPresent()) {
+					BairroModel bairro = bairroOptional.get();
+					BeanUtils.copyProperties(enderecoDto, endereco);
+					endereco.setBairro(bairro);
+					endereco.setEstacao(estacao);
 
-						log.info("Atualizando Endereço de ID " + id);
-						return repository.save(endereco);
-					} else {
-						throw new Exception("Bairro não encontrado");
-					}
+					log.info("Atualizando Endereço de ID " + id);
+					return repository.save(endereco);
 				} else {
-					throw new Exception("Estação não encontrada");
+					throw new Exception("Bairro não encontrado");
 				}
 			} else {
-				throw new Exception("Endereço não encontrado");
+				throw new Exception("Estação não encontrada");
 			}
 		} catch (Exception e) {
 			log.error("Erro ao atualizar o Endereço: " + e.getMessage());

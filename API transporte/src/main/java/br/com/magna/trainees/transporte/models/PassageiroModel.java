@@ -33,11 +33,7 @@ public class PassageiroModel {
 
 	@JsonProperty("idade")
 	public int idade() {
-		if (dataNascimento != null) {
-			return Period.between(dataNascimento, LocalDate.now()).getYears();
-		} else {
-			return 0;
-		}
+		return Period.between(dataNascimento, LocalDate.now()).getYears();
 	}
 
 	@OneToOne(mappedBy = "passageiro", cascade = CascadeType.REMOVE, orphanRemoval = true)

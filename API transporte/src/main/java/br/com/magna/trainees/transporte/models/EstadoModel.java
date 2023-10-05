@@ -47,11 +47,4 @@ public class EstadoModel {
         this.sigla = sigla;
     }
 
-    public List<CidadeModel> getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(List<CidadeModel> cidade) {
-        this.cidade = cidade;
-    }
 }

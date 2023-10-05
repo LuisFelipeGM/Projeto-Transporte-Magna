@@ -49,7 +49,7 @@ public class TipoPassagemService extends EntityService<TipoPassagemModel> {
 	                throw new TipoPassagemInvalidaException("Bilhete não encontrado");
 	            }
 	            
-	        } else if (idCartao != null) {
+	        } else {
 	            Optional<CartaoModel> cartaoOptional = cartaoService.findById(idCartao);
 	            if (cartaoOptional.isPresent()) {
 	                CartaoModel cartao = cartaoOptional.get();
@@ -59,17 +59,12 @@ public class TipoPassagemService extends EntityService<TipoPassagemModel> {
 	                throw new TipoPassagemInvalidaException("Cartão não encontrado");
 	            }
 	            
-	        } else {
-	            throw new TipoPassagemInvalidaException("Nenhum tipo de passagem especificado");
 	        }
 	        
 	        return repository.save(tipoPassagem);
 	    } catch (TipoPassagemInvalidaException e) {
 	        log.error("Erro ao criar o registro de TipoPassagem: " + e.getMessage());
 	        throw e;
-	    } catch (Exception e) {
-	        log.error("Erro ao criar o registro de TipoPassagem: " + e.getMessage());
-	        throw new RuntimeException(e.getMessage());
 	    }
 	}
 

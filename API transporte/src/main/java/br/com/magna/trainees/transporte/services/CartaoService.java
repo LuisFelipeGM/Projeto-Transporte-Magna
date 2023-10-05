@@ -37,6 +37,8 @@ public class CartaoService extends EntityService<CartaoModel> {
 				CartaoModel cartao = new CartaoModel();
 				BeanUtils.copyProperties(cartaoDto, cartao);
 				cartao.setPassageiro(passageiro);
+				if (cartao.getTipoPassageiro() == null)
+					throw new RuntimeException("Tipo de Passageiro é Obrigatório!");
 
 				log.info("Cadastrando novo Cartão");
 
@@ -47,7 +49,7 @@ public class CartaoService extends EntityService<CartaoModel> {
 			}
 		} catch (DataIntegrityViolationException e) {
 			log.error("Erro ao salvar o novo cartão: Restrição exclusiva violada.");
-			throw new RuntimeException(e.getMessage());
+			throw new RuntimeException("Erro ao salvar o novo cartão: Restrição exclusiva violada.");
 		} catch (Exception e) {
 			log.error("Erro ao cadastrar novo Cartão: " + e.getMessage());
 			throw new RuntimeException(e.getMessage());
@@ -59,14 +61,24 @@ public class CartaoService extends EntityService<CartaoModel> {
 		try {
 			Optional<CartaoModel> cartaoOptional = cartaoRepository.findById(id);
 			if (cartaoOptional.isPresent()) {
-				CartaoModel cartao = cartaoOptional.get();
-				BeanUtils.copyProperties(cartaoDto, cartao);
-
-				log.info("Atualizando Cartao de ID: " + id);
-				return repository.save(cartao);
+				Optional<PassageiroModel> passageiroOptional = passageiroService.findById(cartaoDto.idPassageiro());
+				if (passageiroOptional.isPresent()) {
+					CartaoModel cartao = cartaoOptional.get();
+					BeanUtils.copyProperties(cartaoDto, cartao);
+					if (cartao.getTipoPassageiro() == null)
+						throw new RuntimeException("Tipo de Passageiro é Obrigatório!");
+					
+					log.info("Atualizando Cartao de ID: " + id);
+					return repository.save(cartao);
+				} else {
+					throw new RuntimeException("Passageiro não encontrado");
+				}
 			} else {
-				throw new RuntimeException("Erro ao atualizar o Cartão.");
+				throw new RuntimeException("Cartão não encontrado");
 			}
+		} catch (DataIntegrityViolationException e) {
+			log.error("Erro ao atualizar o cartão: Restrição exclusiva violada.");
+			throw new RuntimeException("Erro ao atualizar o cartão: Restrição exclusiva violada.");
 		} catch (Exception e) {
 			log.error("Erro ao atualizar o Cartão: " + e.getMessage());
 			throw new RuntimeException(e.getMessage());
